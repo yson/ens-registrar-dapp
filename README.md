@@ -1,4 +1,4 @@
-# Ethereum Name Service Registrar DApp
+# Ethereum Name Service Registrar DApp(한국어 버전)
 
 This app allows you to register a .eth domain name, for use in ethereum decentralized applications and compatible blockchain browsers.
 
