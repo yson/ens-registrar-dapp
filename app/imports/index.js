@@ -27,6 +27,7 @@ Meteor.startup(function() {
 
     // Setup Moment and Numeral i18n support
     Tracker.autorun(function(){
+        console.log(TAPi18n);
         if(_.isString(TAPi18n.getLanguage())) {
             moment.locale(TAPi18n.getLanguage().substr(0,2));
             numeral.language(TAPi18n.getLanguage().substr(0,2));

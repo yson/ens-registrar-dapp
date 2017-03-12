@@ -1,0 +1,29 @@
+{
+    "app": {
+        "loading": "로딩 중...",
+        "offline": "Can't connect are you offline?",
+        "logginIn": "로그인 중..."
+    },
+    "error": {
+        "insufficientRights": "You don't have enough rights for this action."
+		, "notFound": "Page not found..."
+    },
+    "buttons": {
+        "ok": "승인",
+        "cancel": "취소",
+        "save": "저장",
+        "edit": "수정",
+        "send": "전송",
+        "create": "생성",
+        "tryToReconnect": "재연결 시도"
+    },
+    "commonWords": {
+        "you": "You",
+        "send": "Send",
+        "or": "or",
+        "with": "with",
+        "and": "and",
+        "on": "on",
+        "per": "per"
+    }
+}

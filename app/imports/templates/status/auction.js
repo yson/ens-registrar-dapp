@@ -35,12 +35,12 @@ Template['status-auction'].events({
 
     if (web3.eth.accounts.length == 0) {
       GlobalNotification.error({
-          content: 'No accounts added to dapp',
+          content: TAPi18n.__("errors.noAccount"),
           duration: 3
       });
     } else if (bidAmount < 10000000000000000) {
       GlobalNotification.error({
-          content: 'Bid below minimum value',
+          content: TAPi18n.__("errors.bidBelowMinimumValue"),
           duration: 3
       });
     } else {

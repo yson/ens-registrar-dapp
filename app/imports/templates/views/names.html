@@ -1,6 +1,6 @@
 <template name="view_names">
     {{#if watchesNames}}
-        <h3> Watched Names </h3>
+        <h3> {{_ "names.watchedNames"}} </h3>
         <ul class="names">
             {{#each name in names}}
               <li>
@@ -11,10 +11,10 @@
     {{/if}}
 
     {{#if hasBids}}
-    <h3>More Options</h3>
+    <h3>{{_ "names.moreOptions"}}</h3>
     <ul>
-        <li><a href="" class="export-bids">Export Bids </a></li>
-        <li><a href="" class="import-bids">Import Bids</a></li>
+        <li><a href="" class="export-bids">{{_ "names.exportBids"}} </a></li>
+        <li><a href="" class="import-bids">{{_ "names.importBids"}}</a></li>
     </ul>
 
     {{/if}}

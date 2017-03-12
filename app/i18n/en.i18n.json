@@ -1,0 +1,148 @@
+{
+    "ENS Registrar": "ENS Registrar",
+    "header": {
+        "mainTitle": "Look up an Ethereum Name",
+        "inputPlaceHolder": "type a name"
+    },
+    "nameStatus": {
+        "register": "Register an Ethereum Name",
+        "namesRegistered": "registrations detected",
+        "percentageDisputed" : "names registered for minimum amount",
+        "averageValue" : "average price paid per disputed name",
+        "knownsAuctions": "Knowns Auctions Started recently",
+        "auctionsAreSemiPrivate": "Auctions are semi private: they are only seen by those who know the name. Some popular domains are therefore identifiable, but secret names are kept private until the owner decides to become public.",
+        "knownsNames": "Knowns names recently registered",
+        "beforeANamesIsGranted": "Before a name is granted, all names go to a week long wait to see if anyone else wants the name. If no other candidate appears, then the name is granted by locking 0.01 ether.",
+        "nameIsTooShort": "Name is too short",
+        "onTheTemporaryRegistrar": "On the temporary registrar only names longer than 6 characters are allowed",
+        "inValidateDescription": "<strong>But wait!</strong> Someone has accidentally registered this name. Invalidate it and you'll get 50% of their refund.",
+        "buttonInvalidate": "Invalidate",
+        "knownsAuctionsExpire": "Knowns Auctions about to expire",
+        "aboutThisName": "About this name",
+        "lockedInThisName": "locked in this name",
+        "invalidatorFee": "will be paid to the first to report this invalid name",
+        "waitingForBidsToBeRevealed": "<strong>%s</strong> waiting for bids to be revealed",
+        "yourBids": "Your bids",
+        "timeRemaining": "Time remaining until auction ends",
+        "currentHighestBidder": "Current highest bidder",
+        "nameIsOwned": "<strong>%s</strong> is owned",
+        "theNameWasRegistered": "This name was registered at <em>%s</em>. Owner offered to pay up to <em>%s ether</em>. ",
+        "ownedBy": "Owned by:",
+        "needsToBeRenewedBy": "Needs to be renewed by:",
+        "finalizedByTheOwner": "Before any changes can be done to the name, this name needs to be finalized by the owner which will send them a refund %s ether to the owner.",
+        "buttonFinalizing": "Finalizing...",
+        "buttonFinalizeIt": "Finalize it"
+    },
+    "explainerBody": {
+        "description1": "This app allows you to register a <strong>.eth</strong> domain name, for use in ethereum decentralized applications and compatible blockchain browsers. Names are not bought <em>from</em> any particular organization and there is no central entity receiving any funds for this, all ether spent on this app that isn't being used to pay transactions fees is either temporarily locked or burned.",
+        "description2": "To claim a name, you must be willing to lock some amount of ether for at least a year, after which you can get the ether back by releasing the name. The process takes a week and the name will go to the account that values the name the most and is willing to lock more for it (minimum of 0.01). After names are owned, they will be controlled only by their owners, which will be able to transfer or release them, until it needs to be renewed. The contract is expected to be upgraded in 2018 to create small renewal costs, to discourage long term squatting and gold-rushing.",
+        "button": "Understand the process"
+    },
+    "watch": {
+        "buttonWatch": "watch",
+        "buttonUnwatch": "unwatch"
+    },
+    "noNode": {
+        "doesNotSupport": "Your Browser does not support Smart Contracts",
+        "description": "You read from the Ethereum blockchain, but in order to interact with it from your browser, download an Ethereum enabled browser like <a href=\"https://github.com/ethereum/mist/releases\">Mist</a>, <a href=\"https://ethcore.io/parity.html\">Parity</a> or install the <a href=\"https://metamask.io\">Metamask Chrome Extension</a>."
+    },
+    "names": {
+        "watchedNames": "Watched Names",
+        "moreOptions": "More Options",
+        "exportBids": "Export Bids",
+        "importBids": "Import Bids"
+    },
+    "open": {
+        "nameIsAvailable": "<strong>%s</strong> is available",
+        "whatIsENS1": "Names in Ethereum are used to send ether, to access apps and other future uses. Names are not \"bought\" from anyone, ownership is guaranteed by willingness to lock ether for at least a year on the domain. While the ether is locked, the owner retains the rights to the domain, including the right to add extradata, create subdomains, lease, loan, sell it or do anything with another smart contract. The full process takes seven days and the amount of ether to be locked will be decided by auction. If nobody tries to claim your name in the first week, then you'll be refunded all the funds other than the minimum amount of <strong>0.01</strong> ether, required.",
+        "whatIsENS2": "After at minimum a year, the owner can release the name back to the market and therefore recover their funds. When the permanent registrar is deployed, owners will have the right to choose to move their names to the new registrar or get their ether back. The permanent registrar will most probably include rules that might require further locking of ether, in order to make sitting on an inactive domain unprofitable.",
+        "understand": "I understand",
+        "understandDescription": "how the process works and my risks and responsibilities involved",
+        "buttonOpening": "Opening...",
+        "buttonOpenAuction": "Open Auction",
+        "youOpenBids": "You open bids that you didn't reveal, but no one else did either, so these can be used again. Open the auction to retrieve your old bids."
+    },
+    "auction": {
+        "isOpenForBids": "is open for bids",
+        "description": "You bid by submitting the maximum amount of ether you would be willing to lock in order to hold for this name. The top bidder will own the name, but you will be refunded of any amount more than the strictly necessary to overbid the second place, therefore you only need to bid once. Your maximum bid is kept secret until you reveal it.",
+        "yourBids": "Your bids",
+        "howMuch": "How much you value this name?",
+        "sendTheMaximumAmount": "Send the maximum amount of value you would be willing to lock for this name:",
+        "protectBidAnonimity": "Protect Bid anonimity",
+        "keepTheBidSecret": "Keep the bid secret, send an extra random amount up to <span>%s<span> Ether</span></span> ",
+        "cheap": "Cheap",
+        "private": "Private",
+        "understand": "I understand",
+        "understandDescription": "how the process works and my risks and responsibilities involved",
+        "bidding": "Bidding...",
+        "bid": "Bid",
+        "timeRemaining": "Time remaining until reveal phase",
+        "attention": "<strong>Attention: You must reveal your bid within <em>48 hours</em> of the reveal phase, failing to do so will result in <em>irreversible</em> loss of funds</strong>"
+    },
+    "bid": {
+        "payAndRefundEther": "You were willing to pay at most: <strong>%s ether</strong>. This bid was revealed, <strong>%s ether</strong> were refunded to the depositor.",
+        "payAndDeposite": "You were willing to pay at most <strong>%s ether</strong> and deposited <strong>%s ether</strong>.",
+        "buttonRevealing": "Revealing...",
+        "recoverEther": "Recover %s Ether",
+        "payEther": "You are willing to pay at most: <strong>%s ether</strong>",
+        "depositWillBePartialy": "Deposit (will be partially refunded when you reveal your bid): <strong>%s ether</strong>",
+        "buttonReveal": "Reveal"
+    },
+    "owned": {
+        "youOwn": "You own <strong>%s</strong>",
+        "nameIsOwned": "<strong>%s</strong> is owned",
+        "description1": "This name was registered at <em>%s</em>. Owner offered to pay up to <em>%s ether</em>.",
+        "deedValueIsMin": "No other bid was above the minimum of <em>0.01 ether</em>.",
+        "secondHighestBid": "Second highest bid was <em>%s ether</em>.",
+        "ownedBy": "Owned by:",
+        "renewDate": "Needs to be renewed by: <strong>%s</strong>",
+        "records": "Records",
+        "buttonApplying": "Applying...",
+        "buttonCancel": "Cancel",
+        "buttonApply": "Apply",
+        "buttonEdit": "Edit",
+        "notSet": "not set",
+        "content": "content:",
+        "recordsAreNotEnabled": "Records are not enabled for this name (no resolver found).",
+        "basicResolver": "You can point your name to a basic resolver which has the <strong>addr</strong> record, which is the one you need for your name to point to an address.",
+        "buttonSettingResolver": "Setting resolver...",
+        "buttonSetResolver": "Set Resolver",
+        "transferOrRelease": "Transfer or Release",
+        "transferOwnership": "Transfer ownership of %s to another account",
+        "accountToTransfer": "Account to transfer the name to:",
+        "buttonTransferring": "Transferring...",
+        "buttonTransfer": "Transfer",
+        "releaseDescription": "If you don't want to hold this name anymore, you can release it and get <strong>%s ether</strong> back.",
+        "buttonReleaseing": "Releaseing...",
+        "buttonRelease": "Release",
+        "dontWantToHoldThisName": "<p>If you don't want to hold this name anymore, you'll be able to release it in <strong> %s</strong> and get <strong>%s ether</strong> back.</p>",
+        "expiredBids": "Expired bids",
+        "expiredBidsAreBurned": "You have bid, but did not reveal in time. Expired bids are burned, and you can only be refunded 0.1%.",
+        "aboutThisName": "about this name",
+        "etherLockedInThisName": "<span class=\"big-numeral\">%s</span> <span class=\"unit\">ether</span> locked in this name"
+    },
+    "backup": {
+        "title": "Backup your bids",
+        "description": "This allows you to give them to someone else to reveal them, or restore them in case of data loss",
+        "button": "Download bids"
+    },
+    "restore": {
+        "title": "Import Bids",
+        "description": "This allows you to reveal bids made in other computers. Your current bids won't get removed.",
+        "totalBids": "%s total bids found on file.",
+        "newBids": "%s new bids will be imported.",
+        "noNewBids": "No new bids found for importing",
+        "button": "Import bids"
+    },
+    "errors": {
+        "noAccount": "No accounts added to dapp",
+        "bidBelowMinimumValue": "Bid below minimum value"
+    },
+    "reportStatus": {
+        "checkingConnection": "Checking connection...",
+        "disconnected": "Ethereum network is disconnected. Awaiting connection...",
+        "initializingENS": "Initializing ENS registrar...",
+        "connecting": "Connecting to Ethereum network...",
+        "ready": "Ready!"
+    }
+}

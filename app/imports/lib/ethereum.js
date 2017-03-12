@@ -36,7 +36,7 @@ export default ethereum = (function() {
   }
 
   function checkConnection() {
-    reportStatus('Checking connection...')
+    reportStatus(TAPi18n.__("reportStatus.checkingConnection"));
     var attempts = 4,
       checkInterval;
     return new Promise((resolve, reject) => {
@@ -47,7 +47,7 @@ export default ethereum = (function() {
           resolve(web3);
         } else if (attempts <= 0) {
           console.log('checking..');
-          reportStatus('Ethereum network is disconnected. Awaiting connection...');
+          reportStatus(TAPi18n.__("reportStatus.disconnected"));
         }
       }
       checkInterval = setInterval(check, 800);
@@ -84,7 +84,7 @@ export default ethereum = (function() {
   }
 
   function initRegistrar() {
-    reportStatus('Initializing ENS registrar...');
+    reportStatus(TAPi18n.__("reportStatus.initializingENS"));
     return new Promise((resolve, reject) => {
       try {
         ens = new ENS(web3, customEnsAddress || '0x112234455c3a32fd11230c42e7bccd4a84e02010');
@@ -248,7 +248,8 @@ export default ethereum = (function() {
   }
   
   function initEthereum() {
-    reportStatus('Connecting to Ethereum network...');
+    reportStatus(TAPi18n.__("reportStatus.connecting"));
+    
     return initWeb3()
       .then(checkConnection)
       .then(watchDisconnect)
@@ -269,7 +270,7 @@ export default ethereum = (function() {
         // add an interval to check on auctions every so ofter
         setInterval(updateRevealNames, 60000);        
 
-        reportStatus('Ready!', true);
+        reportStatus(TAPi18n.__("reportStatus.ready"), true);
       })
       .catch(err => {
         console.error(err);

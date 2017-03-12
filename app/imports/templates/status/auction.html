@@ -1,13 +1,13 @@
 <template name="status-auction">
     <div>
-      <h1 class="domain-name"><strong>{{name}}</strong> is open for bids</h1>
+      <h1 class="domain-name"><strong>{{name}}</strong> {{_ "auction.isOpenForBids"}}</h1>
  
           <p>
-            You bid by submitting the maximum amount of ether you would be willing to lock in order to hold for this name. The top bidder will own the name, but you will be refunded of any amount more than the strictly necessary to overbid the second place, therefore you only need to bid once. Your maximum bid is kept secret until you reveal it.
+            {{_ "auction.description"}}
           </p>
 
         {{#if hasBids}}
-          <h3>Your bids</h3>
+          <h3>{{_ "auction.yourBids"}}</h3>
 
           {{#each bid in bids}}
           {{> components_bid bid=bid status='auction' }}
@@ -19,33 +19,33 @@
   
           <form class="new-bid">
 
-          <br><h3>How much you value this name?</h3>          
+          <br><h3>{{_ "auction.howMuch"}}</h3>          
           <p>
-            Send the maximum amount of value you would be willing to lock for this name:<br>
+            {{_ "auction.sendTheMaximumAmount"}}<br>
             <input type="text" min="0.01" step="any" name="bidAmount" placeholder="0.01" class="bid-amount dapp-large" pattern="[0-9\.,]*">
           </p>
           <br>
-          <h3>Protect Bid anonimity</h3>
+          <h3>{{_ "auction.protectBidAnonimity"}}</h3>
           <div class="dapp-selector">
-            Keep the bid secret, send an extra random amount up to <span>{{anonymizerAmount}}<span> Ether</span></span> 
+            {{{_ "auction.keepTheBidSecret" anonymizerAmount }}}
             <br>
             <input type="range" name="anonymizer" min="0" max="1" step="0.01" value="{{TemplateVar.get 'anonymizer'}}">
-            <span>Cheap</span>
-            <span>Private</span>
+            <span>{{_ "auction.cheap"}}</span>
+            <span>{{_ "auction.private"}}</span>
           </div>
           <br>
-          <p class="clear"><input type="checkbox" id="agreement" name="agreement"> <label for="agreement">I understand <a href="#terms" class="explainer">how the process works and my risks and responsibilities involved </a>.</label></p>
+          <p class="clear"><input type="checkbox" id="agreement" name="agreement"> <label for="agreement">{{_ "auction.understand"}} <a href="#terms" class="explainer">{{_ "auction.understandDescription"}} </a>.</label></p>
           <p class="clear">
           {{#if TemplateVar.get 'agree'}}
           <button type="submit" class="dapp-block-button" disabled="{{bidding}}">
             {{#if bidding}}
-              Bidding...
+              {{_ "auction.bidding"}}
             {{else}}
-              Bid
+              {{_ "auction.bid"}}
             {{/if}}
           </button>  
           {{else}}
-          <button type="submit" class="dapp-block-button" disabled="true"> Bid </button>
+          <button type="submit" class="dapp-block-button" disabled="true"> {{_ "auction.bid"}} </button>
           {{/if}}          
           </p>
         </form>
@@ -61,11 +61,11 @@
 <template name="aside-auction">
     {{>components_watch name=name}}
 
-    <h3> Time remaining until reveal phase</h3>
+    <h3> {{_ "auction.timeRemaining"}}</h3>
     <h1>{{timeRemaining}}</h1>
     <p>{{revealDate}}</p>
 
     <p> 
-      <strong>Attention: You must reveal your bid within <em>48 hours</em> of the reveal phase, failing to do so will result in <em>irreversible</em> loss of funds</strong> 
+      {{{_ "auction.attention"}}} 
     </p>    
 </template>

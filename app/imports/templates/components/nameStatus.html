@@ -15,18 +15,18 @@
   {{else}}
     <div class="col-md-8">
 
-        <h1> Register an Ethereum Name</h1>      
+        <h1>{{_ "nameStatus.register"}}</h1>      
 
         {{#if showStats}}
         <ul class="big-numerals">
             <li>
-                <span class="big-numeral">{{namesRegistered}}</span> <br> registrations detected
+                <span class="big-numeral">{{namesRegistered}}</span> <br> {{_ "nameStatus.namesRegistered"}}
             </li>
             <li>
-                <span class="big-numeral">{{percentageDisputed}}</span> <span class="unit">%</span> <br> names registered for minimum amount
+                <span class="big-numeral">{{percentageDisputed}}</span> <span class="unit">%</span> <br> {{_ "nameStatus.percentageDisputed"}}
             </li>
             <li>
-                <span class="big-numeral">{{averageValue}}</span> <span class="unit">ether</span> <br> average price paid per disputed name
+                <span class="big-numeral">{{averageValue}}</span> <span class="unit">ether</span> <br> {{_ "nameStatus.averageValue"}}
             </li>
         </ul>
         {{/if}}
@@ -41,9 +41,9 @@
         {{#if hasAuctions}}
 
         <br>
-        <h3> Knowns Auctions Started recently </h3>
+        <h3> {{_ "nameStatus.knownsAuctions"}} </h3>
 
-        Auctions are semi private: they are only seen by those who know the name. Some popular domains are therefore identifiable, but secret names are kept private until the owner decides to become public.
+        {{_ "nameStatus.auctionsAreSemiPrivate"}}
 
 
         <ul class="names">
@@ -56,7 +56,7 @@
 
           {{#if showExpiring}}
           <br>
-          <h3> Knowns Auctions about to expire </h3>
+          <h3> {{_ "nameStatus.knownsAuctionsExpire"}} </h3>
 
 
           <ul class="names">
@@ -71,9 +71,9 @@
 
         <br>
         {{#if namesRegistered}}
-        <h3> Knowns names recently registered </h3>
+        <h3> {{_ "nameStatus.knownsNames"}} </h3>
 
-        Before a name is granted, all names go to a week long wait to see if anyone else wants the name. If no other candidate appears, then the name is granted by locking 0.01 ether.
+        {{_ "nameStatus.beforeANamesIsGranted"}}
         <ul class="names">
           {{#each auction in knownNamesRegistered}}
               <li>
@@ -96,25 +96,25 @@
 
 <template name="status-forbidden">
     <div>
-        <h1>Name is too short</h1>
+        <h1>{{_ "nameStatus.nameIsTooShort"}}</h1>
         <p>
-            On the temporary registrar only names longer than 6 characters are allowed
+            {{_ "nameStatus.onTheTemporaryRegistrar"}}
         </p>
     </div>
 </template>
 
 <template name="status-forbidden-can-invalidate">
     <div>
-        <h1>Name is too short</h1>
+        <h1>{{_ "nameStatus.nameIsTooShort"}}</h1>
         <p>
-            On the temporary registrar only names longer than 6 characters are allowed.
+            {{_ "nameStatus.onTheTemporaryRegistrar"}}
         </p>
         <p>
-            <strong>But wait!</strong> Someone has accidentally registered this name. Invalidate it and you'll get 50% of their refund.
+            {{{_ "nameStatus.inValidateDescription"}}}
         </p>
 
         {{#if hasNode}}
-        <button class="dapp-block-button invalidate"> Invalidate </button>
+        <button class="dapp-block-button invalidate"> {{_ "nameStatus.buttonInvalidate"}} </button>
         {{else}}
         {{> components_noNode}}
         {{/if}}
@@ -122,23 +122,23 @@
 </template>
 
 <template name="aside-forbidden-can-invalidate">
-   <h3>about this name</h3>
+   <h3>{{_ "nameStatus.aboutThisName"}}</h3>
 
     <ul>
         <li>
-            <span class="big-numeral">{{value}}</span> <span class="unit">ether</span> locked in this name
+            <span class="big-numeral">{{value}}</span> <span class="unit">ether</span> {{_ "nameStatus.lockedInThisName"}}
         </li>
         <li>
-            <span class="big-numeral">{{invalidatorFee}}</span> <span class="unit">ether</span> will be paid to the first to report this invalid name
+            <span class="big-numeral">{{invalidatorFee}}</span> <span class="unit">ether</span> {{_ "nameStatus.invalidatorFee"}}
         </li>
     </ul>
 </template>
 
 <template name="status-reveal">
     <div>
-        <h1> <strong>{{name}}</strong> waiting for bids to be revealed </h1>
+        <h1> {{{_ "nameStatus.waitingForBidsToBeRevealed" name}}} </h1>
         {{#if hasBids}}
-          <h3>Your bids</h3>
+          <h3>{{_ "nameStatus.yourBids"}}</h3>
 
           {{#each bid in bids}}
           {{> components_bid bid=bid status='reveal' }}
@@ -155,25 +155,25 @@
 <template name="aside-reveal">
     {{>components_watch name=name}}
 
-    <h3> Time remaining until auction ends</h3>
+    <h3> {{_ "nameStatus.timeRemaining"}}</h3>
     <h1>{{timeRemaining}}</h1>
     <p> {{registrationDate}} </p>
-    <h3>Current highest bidder</h3>
+    <h3>{{_ "nameStatus.currentHighestBidder"}}</h3>
     <span class="big-numeral">{{highestBid}}</span> <span class="unit">ether</span>
 
 </template>
 
 <template name="status-finalize">
-   <h1 class="domain-name"><strong>{{name}}</strong> is owned</h1> 
+   <h1 class="domain-name">{{{_ "nameStatus.nameIsOwned" name}}}</h1> 
 
     <p>
-        This name was registered at <em>{{registrationDate}}</em>. Owner offered to pay up to <em>{{highestBid}} ether</em>. 
+        {{{_ "nameStatus.theNameWasRegistered" registrationDate highestBid}}}
     </p>
 
-    <p>Owned by: {{> components_address addr=owner}}</p>
-    <p>Needs to be renewed by: <strong>{{renewalDate}}</strong></p> 
+    <p>{{_ "nameStatus.ownedBy"}} {{> components_address addr=owner}}</p>
+    <p>{{_ "nameStatus.needsToBeRenewedBy"}} <strong>{{renewalDate}}</strong></p> 
 
-    <p> <strong> Before any changes can be done to the name, this name needs to be finalized by the owner which will send them a refund {{refund}} ether to the owner.</strong></p>
+    <p> <strong> {{_ "nameStatus.finalizedByTheOwner" refund}}</strong></p>
 
     {{#if hasNode}}
     {{> finalizeButton }}
@@ -191,9 +191,9 @@
 <template name="finalizeButton">
   <button class="dapp-block-button finalize" disabled={{finalizing}}>
     {{#if finalizing}}
-      Finalizing...
+      {{_ "nameStatus.buttonFinalizing"}}
     {{else}}
-      Finalize it 
+      {{_ "nameStatus.buttonFinalizeIt"}}
     {{/if}}
   </button>
 </template>

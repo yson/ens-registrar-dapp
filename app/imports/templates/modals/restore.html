@@ -1,7 +1,7 @@
 <template name="modals_restore">
-  <h1>Import Bids</h1>
+  <h1>{{_ "restore.title"}}</h1>
   <p>
-    This allows you to reveal bids made in other computers. Your current bids won't get removed. <br>
+    {{_ "restore.description"}} <br>
     
     <input type="file" id="restore-input" style="margin: 30px auto 0;">
 
@@ -9,11 +9,11 @@
       <p style="color: red">{{fileError}}</p>
     {{else}}
       {{#if fileIsLoaded}}
-        <p>{{totalBids}} total bids found on file.</p>
+        <p>{{_ "restore.totalBids" totalBids}}</p>
         {{#if newBidsCount}}
-          <p>{{newBidsCount}} new bids will be imported.</p>
+          <p>{{_ "restore.newBids" newBidsCount}}</p>
         {{else}}
-          <p>No new bids found for importing</p>
+          <p>{{_ "restore.noNewBids"}}</p>
         {{/if}}
       {{/if}}
     {{/if}}
@@ -21,6 +21,6 @@
   </p>  
 
   <div class="dapp-modal-buttons no-margins">
-    <button class="ok import dapp-primary-button" disabled={{buttonDisabled}}>Import bids</button>
+    <button class="ok import dapp-primary-button" disabled={{buttonDisabled}}>{{_ "restore.button"}}</button>
   </div>  
 </template>

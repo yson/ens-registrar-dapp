@@ -1,69 +1,68 @@
 <template name="status-owned">
   {{#if isMine}}
-    <h1 class="domain-name">You own <strong>{{name}}</strong></h1> 
+    <h1 class="domain-name">{{{_ "owned.youOwn" name}}}</h1> 
   {{else}}
-    <h1 class="domain-name"><strong>{{name}}</strong> is owned</h1> 
+    <h1 class="domain-name">{{{_ "owned.nameIsOwned" name}}}</h1> 
   {{/if}}
 
   <p>
-      This name was registered at <em>{{registrationDate}}</em>. Owner offered to pay up to <em>{{highestBid}} ether</em>. 
+      {{{_ "owned.description1" registrationDate highestBid}}} 
   {{#if deedValueIsMin}} 
-      No other bid was above the minimum of <em>0.01 ether</em>.
+      {{{_ "owned.deedValueIsMin"}}}
   {{else}} 
-      Second highest bid was <em>{{deedValue}} ether</em>.
+      {{{_ "owned.secondHighestBid" deedValue}}}
   {{/if}}
   </p>
 
-  <p>Owned by: {{> components_address addr=owner}} </p>
-  <p>Needs to be renewed by: <strong>{{renewalDate}}</strong></p>
+  <p>{{_ "owned.ownedBy"}} {{> components_address addr=owner}} </p>
+  <p>{{{_ "owned.renewDate" renewalDate}}}</p>
   
   <div class="records-section">
-    <h3>Records</h3>
+    <h3>{{_ "owned.records"}}</h3>
     {{#if (TemplateVar.get 'hasSetResolver')}}
       <p class="addr-record">
         <strong>addr:</strong>
         {{#if (TemplateVar.get 'editingAddr')}}
           {{> dapp_addressInput }} <br>
           {{#if (TemplateVar.get 'settingAddr')}}
-            <button class="dapp-block-button disabled dapp-small" disabled>Applying...</button>
-            <button class="dapp-block-button disabled dapp-small" disabled>Cancel</button>
+            <button class="dapp-block-button disabled dapp-small" disabled>{{_ "owned.buttonApplying"}}</button>
+            <button class="dapp-block-button disabled dapp-small" disabled>{{_ "owned.buttonCancel"}}</button>
           {{else}}
-            <button class="dapp-block-button set-addr dapp-small">Apply</button>
-            <button class="dapp-block-button cancel-edit-addr dapp-small">Cancel</button>
+            <button class="dapp-block-button set-addr dapp-small">{{_ "owned.buttonApply"}}</button>
+            <button class="dapp-block-button cancel-edit-addr dapp-small">{{_ "owned.buttonCancel"}}</button>
           {{/if}}
           
         {{else}}
           {{#if records.addr}}
             {{> components_address addr=records.addr }} <br><br>
             {{#if isMine}}
-              <button class="dapp-block-button edit-addr dapp-small">Edit</button>
+              <button class="dapp-block-button edit-addr dapp-small">{{_ "owned.buttonEdit"}}</button>
             {{/if}}
           {{else}}
-            <span>not set</span>
+            <span>{{_ "owned.notSet"}}</span>
           {{/if}}
         {{/if}}
       </p>
       <p>
-        <strong>content:</strong>
+        <strong>{{_ "owned.content"}}</strong>
         {{#if records.content}}
           <strong>{{records.content}}</strong>
         {{else}}
-          <span>not set</span>
+          <span>{{_ "owned.notSet"}}</span>
         {{/if}}
       </p>
     {{else}}
       <p>
-        Records are not enabled for this name (no resolver found).
+        {{_ "owned.recordsAreNotEnabled"}}
       </p>
       {{#if isMine}}
         <p>
-          You can point your name to a basic resolver which has the <strong>addr</strong>
-          record, which is the one you need for your name to point to an address.
+          {{{_ "owned.basicResolver"}}}
         </p>
         {{#if (TemplateVar.get 'settingResolver')}}
-          <button class="dapp-block-button disabled dapp-small" disabled>Setting resolver...</button>
+          <button class="dapp-block-button disabled dapp-small" disabled>{{_ "owned.buttonSettingResolver"}}</button>
         {{else}}
-          <button class="dapp-block-button set-resolver dapp-small">Set resolver</button>
+          <button class="dapp-block-button set-resolver dapp-small">{{_ "owned.buttonSetResolver"}}</button>
         {{/if}}
       {{/if}}
     {{/if}}
@@ -72,30 +71,30 @@
   
   {{#if isMine}}
     <div class="transfer-section">
-        <h3>Transfer or Release</h3>
-        <p>Transfer ownership of {{name}} to another account <br></p>
+        <h3>{{_ "owned.transferOrRelease"}}</h3>
+        <p>{{_ "owned.transferOwnership" name}} <br></p>
         <p>
-        Account to transfer the name to:
+        {{_ "owned.accountToTransfer"}}
         {{> dapp_addressInput }}
         </p>
         {{#if transferring}}
-        <button class="dapp-block-button disabled dapp-small" disabled>Transferring...</button>
+        <button class="dapp-block-button disabled dapp-small" disabled>{{_ "owned.buttonTransferring"}}</button>
         {{else}}
-        <button class="dapp-block-button transfer dapp-small">Transfer</button>
+        <button class="dapp-block-button transfer dapp-small">{{_ "owned.buttonTransfer"}}</button>
         {{/if}}
         <br>
         {{#if canRelease}}
-         <p>If you don't want to hold this name anymore, you can release it and get <strong>{{deedValue}} ether</strong> back. <br></p>
+        <p>{{{_ "owned.releaseDescription" deedValue}}} <br></p>
 
         {{#if releasing}}
-        <button class="dapp-block-button disabled dapp-small" disabled>Releasing...</button>
+        <button class="dapp-block-button disabled dapp-small" disabled>{{_ "owned.buttonReleasing"}}</button>
         {{else}}
-        <button class="dapp-block-button release dapp-small">Release</button>
+        <button class="dapp-block-button release dapp-small">{{_ "owned.buttonRelease"}}</button>
         {{/if}}
 
 
         {{else}}
-         <p>If you don't want to hold this name anymore, you'll be able to release it in <strong> {{releaseDate}}</strong> and get <strong>{{deedValue}} ether</strong> back.</p>
+         {{{_ "owned.dontWantToHoldThisName" releaseDate deedValue}}}
         {{/if}}
         
     </div>
@@ -103,9 +102,9 @@
 
     {{#if hasBids}}
     <div class="unused-bids">
-        <h3>Expired bids</h3>
+        <h3>{{_ "owned.expiredBids"}}</h3>
 
-        You have bid, but did not reveal in time. Expired bids are burned, and you can only be refunded 0.1%.
+        {{_ "owned.expiredBidsAreBurned"}}
 
         {{#each bid in bids}}
         {{> components_bid bid=bid status='owned' }}
@@ -117,11 +116,11 @@
 <template name="aside-owned">
     {{>components_watch name=name}}
 
-    <h3>about this name</h3>
+    <h3>{{_ "owned.aboutThisName"}}</h3>
 
     <ul>
         <li>
-            <span class="big-numeral">{{deedValue}}</span> <span class="unit">ether</span> locked in this name
+            {{{_ "owned.etherLockedInThisName" deedValue}}}
         </li>
         
     </ul>

@@ -1,26 +1,26 @@
 <template name="status-open">
     <div>
-      <h1 class="domain-name"><strong>{{name}}</strong> is available</h1> 
+      <h1 class="domain-name">{{{_ "open.nameIsAvailable" name}}}</h1> 
         <p>
-            Names in Ethereum are used to send ether, to access apps and other future uses. Names are not "bought" from anyone, ownership is guaranteed by willingness to lock ether for at least a year on the domain. While the ether is locked, the owner retains the rights to the domain, including the right to add extradata, create subdomains, lease, loan, sell it or do anything with another smart contract. The full process takes seven days and the amount of ether to be locked will be decided by auction. If nobody tries to claim your name in the first week, then you'll be refunded all the funds other than the minimum amount of <strong>0.01</strong> ether, required.
+            {{{_ "open.whatIsENS1"}}}
         </p>
         <p>
-          After at minimum a year, the owner can release the name back to the market and therefore recover their funds. When the permanent registrar is deployed, owners will have the right to choose to move their names to the new registrar or get their ether back. The permanent registrar will most probably include rules that might require further locking of ether, in order to make sitting on an inactive domain unprofitable.
+          {{{_ "open.whatIsENS2"}}}
         </p>
 
         {{#if hasNode}}
   
-          <p><input type="checkbox" id="agreement" name="agreement"> <label for="agreement">I understand <a href="#terms" class="explainer">how the process works and my risks and responsibilities involved </a>.</label></p>
+          <p><input type="checkbox" id="agreement" name="agreement"> <label for="agreement">{{_ "open.understand"}} <a href="#terms" class="explainer">{{_ "open.understandDescription"}} </a>.</label></p>
           {{#if TemplateVar.get 'agree'}}
           <button type="submit" class="dapp-block-button open-auction" disabled={{opening}}> 
             {{#if opening}}
-              Opening...
+              {{_ "open.buttonOpening"}}
             {{else}}
-              Open auction
+              {{_ "open.buttonOpenAuction"}}
             {{/if}}
           </button>
           {{else}}
-              <button type="submit" class="dapp-block-button open-auction" disabled='true'> Open Auction </button> 
+              <button type="submit" class="dapp-block-button open-auction" disabled='true'> {{_ "open.buttonOpenAuction"}} </button> 
           {{/if}}
 
         {{else}}
@@ -33,7 +33,7 @@
       <div class="unused-bids">
           <h3>Unused bids</h3>
 
-          You open bids that you didn't reveal, but no one else did either, so these can be used again. Open the auction to retrieve your old bids.
+          {{{_ "open.youOpenBids" }}}
 
           {{#each bid in bids}}
           {{> components_bid bid=bid status='open' }}
