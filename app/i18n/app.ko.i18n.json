@@ -1,12 +1,12 @@
 {
     "app": {
         "loading": "로딩 중...",
-        "offline": "Can't connect are you offline?",
+        "offline": "연결이 되지 않습니다. 오프라인입니다..",
         "logginIn": "로그인 중..."
     },
     "error": {
-        "insufficientRights": "You don't have enough rights for this action."
-		, "notFound": "Page not found..."
+        "insufficientRights": "실행 권한이 없습니다.."
+		, "notFound": "페이지가 존재하지 않습니다"
     },
     "buttons": {
         "ok": "승인",
@@ -18,12 +18,12 @@
         "tryToReconnect": "재연결 시도"
     },
     "commonWords": {
-        "you": "You",
-        "send": "Send",
-        "or": "or",
-        "with": "with",
-        "and": "and",
-        "on": "on",
-        "per": "per"
+        "you": "당신",
+        "send": "전송",
+        "or": "또는",
+        "with": "함께",
+        "and": "그리고",
+        "on": "에",
+        "per": "당"
     }
 }
