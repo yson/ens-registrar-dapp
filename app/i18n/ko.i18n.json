@@ -9,7 +9,7 @@
         "namesRegistered": "등록된 기록 확인됨",
         "percentageDisputed" : "최소값으로 등록된 네임",
         "averageValue" : "경쟁이 된 네임 당 평균가격",
-        "knownsAuctions": "최근 시작된 경매",,
+        "knownsAuctions": "최근 시작된 경매",
         "auctionsAreSemiPrivate": "경매는 세미 프라이빗 형태입니다: 네임을 아는 사람만 볼 수 있습니다. 일부 유명 네임은 식별가능 하지만 비밀 네임은 소유자가 이를 공개하지 전까지 비공개 상태가 됩니다.",
         "knownsNames": "최근 등록된 네임",
         "beforeANamesIsGranted": "네임이 등록되기 전, 모든 네임은 받기 전에 누군가 그 네임을 원하는지 확인하기 위해 일주일을 기다려야 합니다. 아무도 나타나지 않으면 그 네임을 0.01 이더로 보유할 수 있습니다.",
