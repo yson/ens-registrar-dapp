@@ -1,45 +1,53 @@
 <template name="status-open">
     <div>
       <h1 class="domain-name">{{{_ "open.nameIsAvailable" name}}}</h1> 
-        <p>
-            {{{_ "open.whatIsENS1"}}}
-        </p>
-        <p>
-          {{{_ "open.whatIsENS2"}}}
-        </p>
+        {{>component_explainerBid}}
 
-        {{#if hasNode}}
+        
+        
+      </div>
+
+      {{#unless hasBids}}
+      {{#if hasNode}}
   
-          <p><input type="checkbox" id="agreement" name="agreement"> <label for="agreement">{{_ "open.understand"}} <a href="#terms" class="explainer">{{_ "open.understandDescription"}} </a>.</label></p>
-          {{#if TemplateVar.get 'agree'}}
-          <button type="submit" class="dapp-block-button open-auction" disabled={{opening}}> 
+          {{>components_newBid}}
+
+          <p>
+          Or..
+          </p>
+
+          <button type="submit" class="open-auction" disabled={{opening}}> 
             {{#if opening}}
               {{_ "open.buttonOpening"}}
             {{else}}
-              {{_ "open.buttonOpenAuction"}}
+              {{_ "open.buttonOpenWithoutBidding"}}
             {{/if}}
           </button>
-          {{else}}
-              <button type="submit" class="dapp-block-button open-auction" disabled='true'> {{_ "open.buttonOpenAuction"}} </button> 
-          {{/if}}
 
         {{else}}
         {{> components_noNode}}
         {{/if}}
-        
-      </div>
-
-      {{#if hasBids}}
+      {{else}}
       <div class="unused-bids">
-          <h3>Unused bids</h3>
+          <h3>You have bid but the auction is not open</h3>
 
-          {{{_ "open.youOpenBids" }}}
+          You open bids on an auction that isn't open. Either an error occurred opening the auction, or the auction ended without any bids. In either case, <strong>you must open the auction again to validate your bid</strong>.
 
           {{#each bid in bids}}
           {{> components_bid bid=bid status='open' }}
           {{/each}}
+
+          <br>
+          <button type="submit" class="open-auction dapp-block-button" disabled={{opening}}> 
+            {{#if opening}}
+              Opening...
+            {{else}}
+              Open Auction
+            {{/if}}
+          </button>
       </div>
-      {{/if}}
+      <div style="visibility: hidden;">{{>components_newBid}}</div>      
+      {{/unless}}
 
 </template>
 

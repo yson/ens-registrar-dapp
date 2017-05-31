@@ -21,6 +21,12 @@
   </p>  
 
   <div class="dapp-modal-buttons no-margins">
-    <button class="ok import dapp-primary-button" disabled={{buttonDisabled}}>{{_ "restore.button"}}</button>
+    <button class="ok import dapp-primary-button" disabled={{buttonDisabled}}>
+      {{#if buttonDisabled}}
+        {{_ "restore.noBidsToImport"}}
+      {{else}}
+        {{_ "restore.button"}}
+      {{/if}}
+    </button>
   </div>  
 </template>

@@ -1,9 +1,21 @@
 <template name="modals_backup">
   <h1> {{_ "backup.title"}}</h1>
 
-  <p>{{_ "backup.description"}} <br></p>
+  {{#if bidAmount}}
+
+    <p>Your bids are sealed with a secret to protect their anonymity, so you need that key to reveal. Backing the bids up allows you to restore them in case of data loss. Only the bidding account can reveal it, so make sure you that's safe too. <br></p>
 
   <div class="dapp-modal-buttons no-margins">
-    <button class="ok dapp-primary-button download">{{_ "backup.button"}}</button>
+    <button class="ok dapp-primary-button download"> {{_ "backup.button" bidAmount}} </button>
   </div>
+
+  {{else}}
+
+  <p>{{_ "backup.noBidsFound"}} <br></p>
+        
+
+  <div class="dapp-modal-buttons no-margins">
+    <button class="ok dapp-primary-button download"> {{_ "backup.buttonDownloadMasterSecret"}} </button>
+  </div>
+  {{/if}}
 </template>

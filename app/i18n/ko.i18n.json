@@ -5,16 +5,16 @@
         "inputPlaceHolder": "네임을 입력하세요"
     },
     "nameStatus": {
-        "register": "이더리움 네임 등록",
-        "namesRegistered": "등록된 기록 확인됨",
-        "percentageDisputed" : "최소값으로 등록된 네임",
-        "averageValue" : "경쟁이 된 네임 당 평균가격",
+        "register": "Check availability of an Ethereum Name",
+        "namesRegisteredForMinimumAmount": "<span class=\"big-numeral\">%s</span> <span class=\"unit\">percent</span> <br> names registered for minimum amount",
+        "medianPricePaid": "<span class=\"big-numeral\">%s</span> <span class=\"unit\">ether</span> <br> median price paid per disputed name",
         "knownsAuctions": "최근 시작된 경매",
         "auctionsAreSemiPrivate": "경매는 세미 프라이빗 형태입니다: 네임을 아는 사람만 볼 수 있습니다. 일부 유명 네임은 식별가능 하지만 비밀 네임은 소유자가 이를 공개하 전까지 비공개 상태가 됩니다.",
+        "lastChanceToBid": "Last chance to bid!",
         "knownsNames": "최근 등록된 네임",
         "beforeANamesIsGranted": "네임이 등록되기 전, 모든 네임은 받기 전에 누군가 그 네임을 원하는지 확인하기 위해 일주일을 기다려야 합니다. 아무도 나타나지 않으면 그 네임을 0.01 이더로 보유할 수 있습니다.",
         "nameIsTooShort": "네임이 너무 짧음",
-        "onTheTemporaryRegistrar": "임시 등록기에서는 6자보다 더 긴 네임만 가능합니다",
+        "namesAreTemporarilyLimited": "Names are <strong>temporarily</strong> limited to 7 characters or more.  This limit will be reduced at <a href=\"http://docs.ens.domains/en/latest/faq.html#how-was-the-minimum-character-length-of-7-chosen\">some point in the future</a>.",
         "inValidateDescription": "<strong>잠깐!</strong> 누군가 실수로 이 네임을 등록했습니다. 무효처리시키면 환불액의 50%를 받을 수 있습니다.",
         "buttonInvalidate": "무효",
         "knownsAuctionsExpire": "곧 종료할 경매",
@@ -22,6 +22,7 @@
         "lockedInThisName": "네임을 잠금",
         "invalidatorFee": "유효하지 않은 네임을 처음 보고 하면 보상을 받음",
         "waitingForBidsToBeRevealed": "<strong>%s</strong> 입찰 공개를 기다리는 중입니다.",
+        "afterAuctionEndsIts72h": "After an auction ends its 72h period of bidding, all bidders have 48h to reveal their bids or forfeit their whole deposit. During this period, no new bids can be made. If no bids are revealed, the name can be requested again after this period ends.",
         "yourBids": "당신의 입찰가",
         "timeRemaining": "경매 종료까지 남은 시간",
         "currentHighestBidder": "현재 최고 입찰자",
@@ -59,33 +60,25 @@
         "understand": "이해하였습니다.",
         "understandDescription": "전체 진행 과정과 이에 나의 위험과 책임이 어떻게 연관되어 있는지",
         "buttonOpening": "불러오기...",
-        "buttonOpenAuction": "경매 열기",
-        "youOpenBids": "공개하지 않은 당신의 입찰가를 공개합니다. 하지만 다른 사람들이 아무도 입찰하지 않았으면 다시 사용할 수 있습니다. 경매를 열어 당신의 이전 입찰을 검색하십시오."
+        "buttonOpenWithoutBidding": "Open without bidding",
+        "youOpenBids": "You open bids on an auction that isn't open. Either an error occurred opening the auction, or the auction ended without any bids. In either case, <strong>you must open the auction again to validate your bid</strong>."
     },
     "auction": {
-        "isOpenForBids": "입찰 가능",
-        "description": "이 경매는 최고입찰가 방식을 사용합니다. 입찰에서 이기기는 위해서는 입찰한 최고가가 다른 경쟁자가 제시한 가격보다 높아야 하지만, 최고입찰가와 2등으로 입찰한 금액의 차액은 환불됩니다. 자신의 최고입찰가보다 더 높은 다른 최고입찰가가 들어오지 않는다면 입찰은 한번 해도 됩니다. 최고입찰가는 공개 전까지 비밀이 유지됩니다.",
-        "yourBids": "당신의 입찰가",
-        "howMuch": "이 네임의 가치를 얼마로 평가합니까?",
-        "sendTheMaximumAmount": "이 네임을 잠그기 위하여 최대 금액을 전송합니다:",
-        "protectBidAnonimity": "입찰의 익명성 보호",
-        "keepTheBidSecret": "입찰 비밀을 유지하려면 임의대로 <span>%s<span> 이더</span></span>만큼을 올려서 전송하십시오.",
-        "cheap": "저렴한",
-        "private": "프라이빗",
-        "understand": "이해하였습니다",
-        "understandDescription": "전체 진행 과정과 이에 나의 위험과 책임이 어떻게 연관되어 있는지",
-        "bidding": "입찰 중...",
-        "bid": "입찰",
+        "isWaitingForBids": "is waiting for bids",
+        "buttonBidsClosed": "Bids closed",
+        "aboutToGoInTheRevealPhase": "<strong> About to go in the reveal phase in a few minutes, bidding is closed </strong>",        
         "timeRemaining": "공개까지 남은 시간",
-        "attention": "<strong>주의: <em>48 시간</em>의 공개 기간 이내에 당신의 입찰가를 공개해야 하며, 그렇지 못한 경우 <em>되돌릴 수 없는</em> 금전적 손해</strong>가 발생합니다."
+        "attention": "<strong>Attention: Once the reveal phase has begun, you will have 48 hours to reveal your bid. Failing to do so will result in irreversible loss of funds. Revealing requires information stored in your browser; export your bids to make a backup of this.</strong>"
     },
     "bid": {
-        "payAndRefundEther": "당신의 최고 입찰가는 <strong>%s 이더</strong>였습니다. 이 입찰가는 공개되었고, <strong>%s 이더</strong>가 입금자에게 환불되었습니다.",
+        "topBidderPayAtMostEther": "You are willing to pay at most: <strong>%s ether</strong> for this name. You are still the top bidder.",
+        "topBidderRefundedToTheDepositor": "This bid was revealed, <strong>%s ether</strong> were refunded to the depositor.",
+        "notTopBidderPayAtMostEther": "You were willing to pay at most: <strong>%s ether</strong> but since someone else was willing to pay more, your full deposit was returned, minus a bidding fee of <strong>%s ether</strong> which was burned.",
         "payAndDeposite": "당신은 최고 입찰가는 <strong>%s 이더</strong>였고,  <strong>%s 이더</strong>가 입금되었습니다.",
         "buttonRevealing": "공개하기...",
         "recoverEther": "%s 이더 복구",
         "payEther": "당신의 최고 입찰가: <strong>%s 이더</strong>",
-        "depositWillBePartialy": "기탁금(당신의 입찰가가 공개되었을 때, 부분적으로 환불될 수 있습니다): <strong>%s 이더</strong>",
+        "willRefundedWhenYouReveal": "<strong>%s ether</strong> will refunded when you reveal your bid",
         "buttonReveal": "공개"
     },
     "owned": {
@@ -104,9 +97,9 @@
         "notSet": "설정 안됨",
         "content": "내용:",
         "recordsAreNotEnabled": "이 네임에 대한 기록이 활성화되지 않았습니다(리졸버resolver를 발견하지 못함).",
-        "basicResolver": "당신의 주소대신 등록된 네임을 사용하기 위해서는, 당신의 주소와 네임 매칭 기록을 가진 리졸버를 포인팅하면 됩니다.",
+        "basicResolver": "A resolver is a contract that can answer queries about your domain. You can choose any resolver but at the moment we deployed a basic resolver that can answer about ethereum addresses and content hashes.",
         "buttonSettingResolver": "리졸버 설정 중...",
-        "buttonSetResolver": "리졸버 설정",
+        "buttonSetResolver": "Set to default resolver",
         "transferOrRelease": "이전 또는 해제",
         "transferOwnership": "다른 계정으로 %s의 소유권을 이전",
         "accountToTransfer": "소유권을 이전할 계정:",
@@ -119,12 +112,15 @@
         "expiredBids": "만료된 입찰",
         "expiredBidsAreBurned": "당신은 입찰하고서 정해진 시간 내 공개하지 않은 입찰이 있습니다. 기간이 만료한 입찰은 없어지며 당신은 0.1%을 환불 받을 수 있습니다.",
         "aboutThisName": "해당 네임 정보",
-        "etherLockedInThisName": "<span class=\"big-numeral\">%s</span> <span class=\"unit\">이더</span>가 이 네임에 잠금되어 있음"
+        "etherLockedInThisName": "<span class=\"big-numeral\">%s</span> <span class=\"unit\">이더</span>가 이 네임에 잠금되어 있음",
+        "etherStillHeldInThisName": "<span class=\"big-numeral\">%s</span> <span class=\"unit\">ether</span> still held in this name"        
     },
     "backup": {
         "title": "당신의 입찰 백업",
-        "description": "이것은 다른 사람에게 당신의 입찰가를 대신 공개하게 하거나,  데이터가 손상될 때 복구할 수 있게 해줍니다.",
-        "button": "입찰 다운로드"
+        "description": "Your bids are sealed with a secret to protect their anonymity, so you need that key to reveal. Backing the bids up allows you to restore them in case of data loss. Only the bidding account can reveal it, so make sure you that's safe too. ",
+        "button": "Download %s bids",
+        "noBidsFound": "<strong> No bids found.</strong> You can still download data that might be used to recover lost bids in the future ",
+        "buttonDownloadMasterSecret": "Download master secret"
     },
     "restore": {
         "title": "입찰 가져오기",
@@ -132,6 +128,7 @@
         "totalBids": "이 파일 %s 개의 입찰이 있습니다.",
         "newBids": "%s 개의 새 입찰을 가져오게 됩니다.",
         "noNewBids": "가져올 새 입찰 기록이 없습니다.",
+        "noBidsToImport": "No bids to import",        
         "button": "입찰 가져오기"
     },
     "errors": {

@@ -1,13 +1,10 @@
 <template name="status-auction">
     <div>
-      <h1 class="domain-name"><strong>{{name}}</strong> {{_ "auction.isOpenForBids"}}</h1>
+      <h1 class="domain-name"><strong>{{name}}</strong> {{_ "auction.isWaitingForBids"}}</h1>
  
-          <p>
-            {{_ "auction.description"}}
-          </p>
+        {{>component_explainerBid}}
 
         {{#if hasBids}}
-          <h3>{{_ "auction.yourBids"}}</h3>
 
           {{#each bid in bids}}
           {{> components_bid bid=bid status='auction' }}
@@ -15,43 +12,16 @@
 
         {{else}}
 
-        {{#if hasNode}}
-  
-          <form class="new-bid">
-
-          <br><h3>{{_ "auction.howMuch"}}</h3>          
-          <p>
-            {{_ "auction.sendTheMaximumAmount"}}<br>
-            <input type="text" min="0.01" step="any" name="bidAmount" placeholder="0.01" class="bid-amount dapp-large" pattern="[0-9\.,]*">
-          </p>
-          <br>
-          <h3>{{_ "auction.protectBidAnonimity"}}</h3>
-          <div class="dapp-selector">
-            {{{_ "auction.keepTheBidSecret" anonymizerAmount }}}
-            <br>
-            <input type="range" name="anonymizer" min="0" max="1" step="0.01" value="{{TemplateVar.get 'anonymizer'}}">
-            <span>{{_ "auction.cheap"}}</span>
-            <span>{{_ "auction.private"}}</span>
-          </div>
-          <br>
-          <p class="clear"><input type="checkbox" id="agreement" name="agreement"> <label for="agreement">{{_ "auction.understand"}} <a href="#terms" class="explainer">{{_ "auction.understandDescription"}} </a>.</label></p>
-          <p class="clear">
-          {{#if TemplateVar.get 'agree'}}
-          <button type="submit" class="dapp-block-button" disabled="{{bidding}}">
-            {{#if bidding}}
-              {{_ "auction.bidding"}}
+          {{#if hasNode}}
+            {{#unless TemplateVar.get 'outOfTime'}}
+              {{>components_newBid}}
             {{else}}
-              {{_ "auction.bid"}}
-            {{/if}}
-          </button>  
+              <button type="submit" class="dapp-block-button" disabled="true"> {{_ "auction.buttonBidsClosed"}} </button><br><br>
+              {{_ "auction.aboutToGoInTheRevealPhase"}}
+            {{/unless}}
           {{else}}
-          <button type="submit" class="dapp-block-button" disabled="true"> {{_ "auction.bid"}} </button>
-          {{/if}}          
-          </p>
-        </form>
-        {{else}}
-        {{> components_noNode}}
-        {{/if}}
+            {{> components_noNode}}
+          {{/if}}
 
         {{/if}}
           
@@ -66,6 +36,7 @@
     <p>{{revealDate}}</p>
 
     <p> 
-      {{{_ "auction.attention"}}} 
+      {{{_ "auction.attention"}}}
     </p>    
+
 </template>

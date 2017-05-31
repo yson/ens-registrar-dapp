@@ -13,23 +13,25 @@
         {{>view_names}}
     </aside>    
   {{else}}
-    <div class="col-md-8">
+    <div class="col-md-8 main-content">
 
         <h1>{{_ "nameStatus.register"}}</h1>      
 
         {{#if showStats}}
+        <h3> Stats on recent auctions </h3>
         <ul class="big-numerals">
             <li>
-                <span class="big-numeral">{{namesRegistered}}</span> <br> {{_ "nameStatus.namesRegistered"}}
+                {{{_ "nameStatus.namesRegisteredForMinimumAmount" percentageDisputed }}}
             </li>
             <li>
-                <span class="big-numeral">{{percentageDisputed}}</span> <span class="unit">%</span> <br> {{_ "nameStatus.percentageDisputed"}}
-            </li>
-            <li>
-                <span class="big-numeral">{{averageValue}}</span> <span class="unit">ether</span> <br> {{_ "nameStatus.averageValue"}}
+                {{{_ "nameStatus.medianPricePaid" medianValue }}}
             </li>
         </ul>
         {{/if}}
+
+        {{#unless isMainNetwork}}
+          <p><strong>You are NOT on the main Network, but on the {{TemplateVar.get 'network'}} network. Names bought here are not valid on the main net.</strong></p>
+        {{/unless}}
         
         {{> component_explainerBody}}
 
@@ -39,30 +41,32 @@
         {{/unless}}  
 
         {{#if hasAuctions}}
-
         <br>
         <h3> {{_ "nameStatus.knownsAuctions"}} </h3>
 
         {{_ "nameStatus.auctionsAreSemiPrivate"}}
 
-
         <ul class="names">
           {{#each auction in publicAuctions}}
               <li>
-                  <a href='#{{auction.name}}'>{{auction.fullname}}</a> 
+                  <a href='#{{auction.name}}' class='{{#if auction.watched}}watched{{/if}} {{recent auction.registrationDate}}'>
+                    {{auction.fullname}}
+                  </a> 
               </li>
             {{/each}}
         </ul>
 
           {{#if showExpiring}}
           <br>
-          <h3> {{_ "nameStatus.knownsAuctionsExpire"}} </h3>
+          <h3> {{_ "nameStatus.lastChanceToBid"}} </h3>
 
 
           <ul class="names">
             {{#each auction in publicAuctionsAboutToExpire}}
                 <li>
-                    <a href='#{{auction.name}}'>{{auction.fullname}}</a> 
+                    <a href='#{{auction.name}}' class='{{#if auction.watched}}watched{{/if}}'>
+                      {{auction.fullname}}
+                    </a>
                 </li>
               {{/each}}
           </ul>
@@ -77,7 +81,9 @@
         <ul class="names">
           {{#each auction in knownNamesRegistered}}
               <li>
-                  <a href='#{{auction.name}}' class='{{#if canBeInvalidated auction.name }}can-invalidate{{/if}}'>{{auction.fullname}}</a>  
+                  <a href='#{{auction.name}}' class='{{#if canBeInvalidated auction.name }}can-invalidate{{/if}} {{#if auction.watched}}watched{{/if}} {{recent auction.registrationDate}}'>
+                    {{auction.fullname}}
+                  </a>  
                     {{#if canBeInvalidated auction.name }}
                     <icon class="icon-alert">!</icon> 
                     {{/if}}
@@ -98,7 +104,7 @@
     <div>
         <h1>{{_ "nameStatus.nameIsTooShort"}}</h1>
         <p>
-            {{_ "nameStatus.onTheTemporaryRegistrar"}}
+            {{_ "nameStatus.namesAreTemporarilyLimited"}}
         </p>
     </div>
 </template>
@@ -107,7 +113,7 @@
     <div>
         <h1>{{_ "nameStatus.nameIsTooShort"}}</h1>
         <p>
-            {{_ "nameStatus.onTheTemporaryRegistrar"}}
+            {{_ "nameStatus.namesAreTemporarilyLimited"}}
         </p>
         <p>
             {{{_ "nameStatus.inValidateDescription"}}}
@@ -134,16 +140,43 @@
     </ul>
 </template>
 
+<template name="status-not-yet-available">
+    <div>
+        <h1><strong>{{name}}</strong> is not yet available</h1>
+        <p>
+          Names are being released on a distributed schedule. Registration for this name can be requested by anyone after <strong>{{availableDate}}</strong>. 
+        </p>
+        <p>
+          Once a name is requested, a period of 72 hours begins in which anyone can put a sealed bid for it and send the necessary funds (minimum of 0.01 ether). This period is followed by a 48 hour one (the "Reveal Period") in which <strong>bids must be revealed. Any bid that is not revealed during Reveal Period results in the loss of its related funds</strong>. Revealing your bid requires information stored in your browser, or backed up using the 'Export Bids' option. The highest bidder after all bids are revealed during this Reveal Period becomes the registrant of the name, and the ether they sent to the contract will be refunded immediately, <strong>minus the value required to outbid the second highest bidder.</strong> The remaining funds are kept locked in a contract for at least a year, after which they can be withdrawn by the registrant upon releasing rights of use of the name. Names with registrants are controlled only by their registrants, who can transfer or release the name until it needs to be renewed.
+        </p>
+
+        <button type="submit" class="dapp-block-button" disabled="true"> Cannot open now </button>
+
+    </div>
+</template>
+
+<template name="aside-not-yet-available">
+    {{>components_watch name=name}}
+
+   <h3>Can be requested in</h3>
+
+    <h1> {{availableCountdown}} </h1>
+</template>
+
 <template name="status-reveal">
     <div>
         <h1> {{{_ "nameStatus.waitingForBidsToBeRevealed" name}}} </h1>
+        <p>
+          {{_ "nameStatus.afterAuctionEndsIts72h"}}
+        </p>
         {{#if hasBids}}
           <h3>{{_ "nameStatus.yourBids"}}</h3>
 
           {{#each bid in bids}}
           {{> components_bid bid=bid status='reveal' }}
           {{/each}}
-
+        {{else}}
+          <p> You don't have any bids for this name. If you have previously bid, then <a href="" class="import-bids">Import your bids backup</a> to see and reveal them. </p>
         {{/if}}
         
         {{#unless hasNode}}
@@ -158,42 +191,12 @@
     <h3> {{_ "nameStatus.timeRemaining"}}</h3>
     <h1>{{timeRemaining}}</h1>
     <p> {{registrationDate}} </p>
+    <br>
     <h3>{{_ "nameStatus.currentHighestBidder"}}</h3>
     <span class="big-numeral">{{highestBid}}</span> <span class="unit">ether</span>
+    <br>
+    <h3>Current second-highest bidder</h3>
+    <span class="big-numeral">{{secondHighestBid}}</span> <span class="unit">ether</span>
 
 </template>
 
-<template name="status-finalize">
-   <h1 class="domain-name">{{{_ "nameStatus.nameIsOwned" name}}}</h1> 
-
-    <p>
-        {{{_ "nameStatus.theNameWasRegistered" registrationDate highestBid}}}
-    </p>
-
-    <p>{{_ "nameStatus.ownedBy"}} {{> components_address addr=owner}}</p>
-    <p>{{_ "nameStatus.needsToBeRenewedBy"}} <strong>{{renewalDate}}</strong></p> 
-
-    <p> <strong> {{_ "nameStatus.finalizedByTheOwner" refund}}</strong></p>
-
-    {{#if hasNode}}
-    {{> finalizeButton }}
-    {{else}}
-    {{> components_noNode}}
-    {{/if}}    
-   
-</template>
-
-
-<template name='aside-finalize'>
-      {{>components_watch name=name}}
-</template>
-
-<template name="finalizeButton">
-  <button class="dapp-block-button finalize" disabled={{finalizing}}>
-    {{#if finalizing}}
-      {{_ "nameStatus.buttonFinalizing"}}
-    {{else}}
-      {{_ "nameStatus.buttonFinalizeIt"}}
-    {{/if}}
-  </button>
-</template>

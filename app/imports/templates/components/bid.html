@@ -2,16 +2,20 @@
   <div class="components_bid">
 
     {{#if isRevealed}}
+      {{#if isTopBidder}}
       <p>
-        {{{_ "bid.payAndRefundEther" (dapp_formatBalance bid.value "0,0.00") (dapp_formatBalance bid.depositAmount "0,0.00") }}}
-      </p>       
-      <p><span></span></p>
+        {{{_ "bid.topBidderPayAtMostEther" (dapp_formatBalance bid.value "0,0.00[0000]") }}} {{#if refund}}{{{_ "bid.topBidderRefundedToTheDepositor" (dapp_formatBalance refund "0,0.00[0000]") }}} {{/if}} 
+      </p>        
+      {{else}}
+      <p>
+        {{{_ "bid.notTopBidderPayAtMostEther" (dapp_formatBalance bid.value "0,0.00[0000]") (dapp_formatBalance burnFee "0,0.00[0000]") }}} 
+      </p>       {{/if}}
     {{else}}
 
 
       {{#if expired}}
       <p>
-        {{{_ "bid.payAndDeposite" (dapp_formatBalance bid.value "0,0.00") (dapp_formatBalance bid.depositAmount "0,0.00") }}} 
+        {{{_ "bid.payAndDeposite" (dapp_formatBalance bid.value "0,0.00[0000]") (dapp_formatBalance bid.depositAmount "0,0.00[0000]") }}} 
       </p>       
         {{#if revealing}}
           <button class="dapp-block-button disabled" disabled>{{_ "bid.buttonRevealing"}}</button>
@@ -22,8 +26,8 @@
       {{else}}
 
       <p>
-        {{{_ "bid.payEther" (dapp_formatBalance bid.value "0,0.00") }}} <br>
-        {{{_ "bid.depositWillBePartialy" (dapp_formatBalance bid.depositAmount "0,0.00") }}}
+        {{{_ "bid.payEther" (dapp_formatBalance bid.value "0,0.00[0000]") }}} <br>
+        {{#if refund}}{{{_ "bid.willRefundedWhenYouReveal" (dapp_formatBalance refund "0,0.00[0000]") }}} {{/if}}
       </p>  
       {{#if canReveal}}
         {{#if revealing}}

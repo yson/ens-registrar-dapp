@@ -5,16 +5,16 @@
         "inputPlaceHolder": "type a name"
     },
     "nameStatus": {
-        "register": "Register an Ethereum Name",
-        "namesRegistered": "registrations detected",
-        "percentageDisputed" : "names registered for minimum amount",
-        "averageValue" : "average price paid per disputed name",
+        "register": "Check availability of an Ethereum Name",
+        "namesRegisteredForMinimumAmount": "<span class=\"big-numeral\">%s</span> <span class=\"unit\">percent</span> <br> names registered for minimum amount",
+        "medianPricePaid": "<span class=\"big-numeral\">%s</span> <span class=\"unit\">ether</span> <br> median price paid per disputed name",
         "knownsAuctions": "Knowns Auctions Started recently",
         "auctionsAreSemiPrivate": "Auctions are semi private: they are only seen by those who know the name. Some popular domains are therefore identifiable, but secret names are kept private until the owner decides to become public.",
+        "lastChanceToBid": "Last chance to bid!",        
         "knownsNames": "Knowns names recently registered",
         "beforeANamesIsGranted": "Before a name is granted, all names go to a week long wait to see if anyone else wants the name. If no other candidate appears, then the name is granted by locking 0.01 ether.",
         "nameIsTooShort": "Name is too short",
-        "onTheTemporaryRegistrar": "On the temporary registrar only names longer than 6 characters are allowed",
+        "namesAreTemporarilyLimited": "Names are <strong>temporarily</strong> limited to 7 characters or more.  This limit will be reduced at <a href=\"http://docs.ens.domains/en/latest/faq.html#how-was-the-minimum-character-length-of-7-chosen\">some point in the future</a>.",
         "inValidateDescription": "<strong>But wait!</strong> Someone has accidentally registered this name. Invalidate it and you'll get 50% of their refund.",
         "buttonInvalidate": "Invalidate",
         "knownsAuctionsExpire": "Knowns Auctions about to expire",
@@ -22,6 +22,7 @@
         "lockedInThisName": "locked in this name",
         "invalidatorFee": "will be paid to the first to report this invalid name",
         "waitingForBidsToBeRevealed": "<strong>%s</strong> waiting for bids to be revealed",
+        "afterAuctionEndsIts72h": "After an auction ends its 72h period of bidding, all bidders have 48h to reveal their bids or forfeit their whole deposit. During this period, no new bids can be made. If no bids are revealed, the name can be requested again after this period ends.",
         "yourBids": "Your bids",
         "timeRemaining": "Time remaining until auction ends",
         "currentHighestBidder": "Current highest bidder",
@@ -59,33 +60,25 @@
         "understand": "I understand",
         "understandDescription": "how the process works and my risks and responsibilities involved",
         "buttonOpening": "Opening...",
-        "buttonOpenAuction": "Open Auction",
-        "youOpenBids": "You open bids that you didn't reveal, but no one else did either, so these can be used again. Open the auction to retrieve your old bids."
+        "buttonOpenWithoutBidding": "Open without bidding",
+        "youOpenBids": "You open bids on an auction that isn't open. Either an error occurred opening the auction, or the auction ended without any bids. In either case, <strong>you must open the auction again to validate your bid</strong>."
     },
     "auction": {
-        "isOpenForBids": "is open for bids",
-        "description": "You bid by submitting the maximum amount of ether you would be willing to lock in order to hold for this name. The top bidder will own the name, but you will be refunded of any amount more than the strictly necessary to overbid the second place, therefore you only need to bid once. Your maximum bid is kept secret until you reveal it.",
-        "yourBids": "Your bids",
-        "howMuch": "How much you value this name?",
-        "sendTheMaximumAmount": "Send the maximum amount of value you would be willing to lock for this name:",
-        "protectBidAnonimity": "Protect Bid anonimity",
-        "keepTheBidSecret": "Keep the bid secret, send an extra random amount up to <span>%s<span> Ether</span></span> ",
-        "cheap": "Cheap",
-        "private": "Private",
-        "understand": "I understand",
-        "understandDescription": "how the process works and my risks and responsibilities involved",
-        "bidding": "Bidding...",
-        "bid": "Bid",
+        "isWaitingForBids": "is waiting for bids",
+        "buttonBidsClosed": "Bids closed",
+        "aboutToGoInTheRevealPhase": "<strong> About to go in the reveal phase in a few minutes, bidding is closed </strong>",
         "timeRemaining": "Time remaining until reveal phase",
-        "attention": "<strong>Attention: You must reveal your bid within <em>48 hours</em> of the reveal phase, failing to do so will result in <em>irreversible</em> loss of funds</strong>"
+        "attention": "<strong>Attention: Once the reveal phase has begun, you will have 48 hours to reveal your bid. Failing to do so will result in irreversible loss of funds. Revealing requires information stored in your browser; export your bids to make a backup of this.</strong>"
     },
     "bid": {
-        "payAndRefundEther": "You were willing to pay at most: <strong>%s ether</strong>. This bid was revealed, <strong>%s ether</strong> were refunded to the depositor.",
+        "topBidderPayAtMostEther": "You are willing to pay at most: <strong>%s ether</strong> for this name. You are still the top bidder.",
+        "topBidderRefundedToTheDepositor": "This bid was revealed, <strong>%s ether</strong> were refunded to the depositor.",
+        "notTopBidderPayAtMostEther": "You were willing to pay at most: <strong>%s ether</strong> but since someone else was willing to pay more, your full deposit was returned, minus a bidding fee of <strong>%s ether</strong> which was burned.",
         "payAndDeposite": "You were willing to pay at most <strong>%s ether</strong> and deposited <strong>%s ether</strong>.",
         "buttonRevealing": "Revealing...",
         "recoverEther": "Recover %s Ether",
         "payEther": "You are willing to pay at most: <strong>%s ether</strong>",
-        "depositWillBePartialy": "Deposit (will be partially refunded when you reveal your bid): <strong>%s ether</strong>",
+        "willRefundedWhenYouReveal": "<strong>%s ether</strong> will refunded when you reveal your bid",
         "buttonReveal": "Reveal"
     },
     "owned": {
@@ -104,9 +97,9 @@
         "notSet": "not set",
         "content": "content:",
         "recordsAreNotEnabled": "Records are not enabled for this name (no resolver found).",
-        "basicResolver": "You can point your name to a basic resolver which has the <strong>addr</strong> record, which is the one you need for your name to point to an address.",
+        "basicResolver": "A resolver is a contract that can answer queries about your domain. You can choose any resolver but at the moment we deployed a basic resolver that can answer about ethereum addresses and content hashes.",
         "buttonSettingResolver": "Setting resolver...",
-        "buttonSetResolver": "Set Resolver",
+        "buttonSetResolver": "Set to default resolver",
         "transferOrRelease": "Transfer or Release",
         "transferOwnership": "Transfer ownership of %s to another account",
         "accountToTransfer": "Account to transfer the name to:",
@@ -117,14 +110,17 @@
         "buttonRelease": "Release",
         "dontWantToHoldThisName": "<p>If you don't want to hold this name anymore, you'll be able to release it in <strong> %s</strong> and get <strong>%s ether</strong> back.</p>",
         "expiredBids": "Expired bids",
-        "expiredBidsAreBurned": "You have bid, but did not reveal in time. Expired bids are burned, and you can only be refunded 0.1%.",
+        "expiredBidsAreBurned": "You have a bid, but did not reveal in time. Expired bids are burned, and you can only be refunded 0.1%.",
         "aboutThisName": "about this name",
-        "etherLockedInThisName": "<span class=\"big-numeral\">%s</span> <span class=\"unit\">ether</span> locked in this name"
+        "etherLockedInThisName": "<span class=\"big-numeral\">%s</span> <span class=\"unit\">ether</span> locked in this name",
+        "etherStillHeldInThisName": "<span class=\"big-numeral\">%s</span> <span class=\"unit\">ether</span> still held in this name"
     },
     "backup": {
         "title": "Backup your bids",
-        "description": "This allows you to give them to someone else to reveal them, or restore them in case of data loss",
-        "button": "Download bids"
+        "description": "Your bids are sealed with a secret to protect their anonymity, so you need that key to reveal. Backing the bids up allows you to restore them in case of data loss. Only the bidding account can reveal it, so make sure you that's safe too. ",
+        "button": "Download %s bids",
+        "noBidsFound": "<strong> No bids found.</strong> You can still download data that might be used to recover lost bids in the future ",
+        "buttonDownloadMasterSecret": "Download master secret"
     },
     "restore": {
         "title": "Import Bids",
@@ -132,6 +128,7 @@
         "totalBids": "%s total bids found on file.",
         "newBids": "%s new bids will be imported.",
         "noNewBids": "No new bids found for importing",
+        "noBidsToImport": "No bids to import",
         "button": "Import bids"
     },
     "errors": {
