@@ -1,12 +1,14 @@
 <template name="status-owned">
   {{#if isMine}}
-    <h1 class="domain-name">{{{_ "owned.youOwn" {{TemplateVar.get 'name'}} }}}</h1> 
+    <h1 class="domain-name">{{{_ "owned.youOwn" (TemplateVar.get 'name') }}}</h1> 
   {{else}}
-    <h1 class="domain-name">{{{_ "owned.nameIsOwned" {{TemplateVar.get 'name'}} }}}</h1> 
+    <h1 class="domain-name">{{{_ "owned.nameIsOwned" (TemplateVar.get 'name') }}}</h1> 
   {{/if}}
 
   <p>
       {{{_ "owned.deedValueIsMin"}}}
+  {{#if noBids}} 
+      No other bid was above the minimum of <em>0.01 ether</em>.      
   {{else}} 
       {{{_ "owned.secondHighestBid" finalValue}}}
   {{/if}}
