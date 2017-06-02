@@ -4,25 +4,49 @@
         "mainTitle": "이더리움 네임 검색",
         "inputPlaceHolder": "네임을 입력하세요"
     },
+    "body": {
+        "somethingHasGoneAwry": "ㅋㅋSomething has gone awry",
+        "unsupportedNetwork": "ㅋㅋUnsupported network",
+        "youCanEnterACustomENS": [
+            "ㅋㅋENS is only running on the Ropsten testnet network for now,",
+            "ㅋㅋbut you can enter a custom ENS contract address."
+        ],
+        "customENSAddress": "ㅋㅋCustom ENS address:",
+        "buttonUseCustomAddress": "ㅋㅋUse custom address"
+    },
     "nameStatus": {
-        "register": "Check availability of an Ethereum Name",
-        "namesRegisteredForMinimumAmount": "<span class=\"big-numeral\">%s</span> <span class=\"unit\">percent</span> <br> names registered for minimum amount",
-        "medianPricePaid": "<span class=\"big-numeral\">%s</span> <span class=\"unit\">ether</span> <br> median price paid per disputed name",
+        "register": "ㅋㅋCheck availability of an Ethereum Name",
+        "statsOnRecentAuctions": "ㅋㅋStats on recent auctions",
+        "namesRegisteredForMinimumAmount": "ㅋㅋ<span class=\"big-numeral\">%s</span> <span class=\"unit\">percent</span> <br> names registered for minimum amount",
+        "medianPricePaid": "ㅋㅋ<span class=\"big-numeral\">%s</span> <span class=\"unit\">ether</span> <br> median price paid per disputed name",
+        "youAreNotOnTheMainNetwork": "<p>ㅋㅋ<strong>You are NOT on the main Network, but on the %s network. Names bought here are not valid on the main net.</strong></p>",
         "knownsAuctions": "최근 시작된 경매",
         "auctionsAreSemiPrivate": "경매는 세미 프라이빗 형태입니다: 네임을 아는 사람만 볼 수 있습니다. 일부 유명 네임은 식별가능 하지만 비밀 네임은 소유자가 이를 공개하 전까지 비공개 상태가 됩니다.",
-        "lastChanceToBid": "Last chance to bid!",
+        "lastChanceToBid": "ㅋㅋLast chance to bid!",
         "knownsNames": "최근 등록된 네임",
         "beforeANamesIsGranted": "네임이 등록되기 전, 모든 네임은 받기 전에 누군가 그 네임을 원하는지 확인하기 위해 일주일을 기다려야 합니다. 아무도 나타나지 않으면 그 네임을 0.01 이더로 보유할 수 있습니다.",
         "nameIsTooShort": "네임이 너무 짧음",
-        "namesAreTemporarilyLimited": "Names are <strong>temporarily</strong> limited to 7 characters or more.  This limit will be reduced at <a href=\"http://docs.ens.domains/en/latest/faq.html#how-was-the-minimum-character-length-of-7-chosen\">some point in the future</a>.",
+        "namesAreTemporarilyLimited": "ㅋㅋNames are <strong>temporarily</strong> limited to 7 characters or more.  This limit will be reduced at <a href=\"http://docs.ens.domains/en/latest/faq.html#how-was-the-minimum-character-length-of-7-chosen\">some point in the future</a>.",
         "inValidateDescription": "<strong>잠깐!</strong> 누군가 실수로 이 네임을 등록했습니다. 무효처리시키면 환불액의 50%를 받을 수 있습니다.",
         "buttonInvalidate": "무효",
         "knownsAuctionsExpire": "곧 종료할 경매",
         "aboutThisName": "네임 정보",
         "lockedInThisName": "네임을 잠금",
         "invalidatorFee": "유효하지 않은 네임을 처음 보고 하면 보상을 받음",
+        "nameIsNotYetAvailable": [
+            "<h1>ㅋㅋ<strong>%s</strong> is not yet available</h1>",
+            "<p>",
+            "ㅋㅋNames are being released on a distributed schedule. Registration for this name can be requested by anyone after <strong>%s</strong>. ",
+            "</p>",
+            "<p>",
+            "ㅋㅋOnce a name is requested, a period of 72 hours begins in which anyone can put a sealed bid for it and send the necessary funds (minimum of 0.01 ether). This period is followed by a 48 hour one (the \"Reveal Period\") in which <strong>bids must be revealed. Any bid that is not revealed during Reveal Period results in the loss of its related funds</strong>. Revealing your bid requires information stored in your browser, or backed up using the 'Export Bids' option. The highest bidder after all bids are revealed during this Reveal Period becomes the registrant of the name, and the ether they sent to the contract will be refunded immediately, <strong>minus the value required to outbid the second highest bidder.</strong> The remaining funds are kept locked in a contract for at least a year, after which they can be withdrawn by the registrant upon releasing rights of use of the name. Names with registrants are controlled only by their registrants, who can transfer or release the name until it needs to be renewed.",
+            "</p>"
+        ],
+        "buttonCannotOpenNow": "ㅋㅋCannot open now",
+        "canBeRequestedIn": "ㅋㅋCan be requested in",
+        "ifYouHavePreviouslyBid": "ㅋㅋYou don't have any bids for this name. If you have previously bid, then <a href=\"\" class=\"import-bids\">Import your bids backup</a> to see and reveal them.",        
         "waitingForBidsToBeRevealed": "<strong>%s</strong> 입찰 공개를 기다리는 중입니다.",
-        "afterAuctionEndsIts72h": "After an auction ends its 72h period of bidding, all bidders have 48h to reveal their bids or forfeit their whole deposit. During this period, no new bids can be made. If no bids are revealed, the name can be requested again after this period ends.",
+        "afterAuctionEndsIts72h": "ㅋㅋAfter an auction ends its 72h period of bidding, all bidders have 48h to reveal their bids or forfeit their whole deposit. During this period, no new bids can be made. If no bids are revealed, the name can be requested again after this period ends.",
         "yourBids": "당신의 입찰가",
         "timeRemaining": "경매 종료까지 남은 시간",
         "currentHighestBidder": "현재 최고 입찰자",
@@ -35,9 +59,46 @@
         "buttonFinalizeIt": "완료"
     },
     "explainerBody": {
-        "description1": "이 앱은 이더리움 탈중앙화 어플리케이션과 호환 블록체인 브라우저에서 사용할 수 있는 <strong>.eth</strong> 도메인 네임을 등록할 수 있게 해줍니다. 네임은 특정 조직과 자금을 수령하는 중앙 기관<em>으로부터</em> 살 수 없으며, 이 앱에서 트랙잭션 비용 지불에 사용되지 않은 모든 이더는 잠기거나 사라집니다.",
-        "description2": "네임을 청구하려면, 최소 1년간 일정 액수의 이더가 잠기게 해야하며, 그 후에 네임을 해제하여 이더를 회수할 수 있습니다. 이 과정은 일주일이 소요되며 그 네임은 가격을 가장 높게 부른 계정으로 이동해서 잠겨질 수 있습니다(최소 0.01). 네임을 소유한 후에는 소유자만이 갱신 전까지 네임에 대하여 제어할 수 있으며, 소유자를 이전하거나 해제할 수 있습니다. 계약은 갱신비용을 낮추고, 장기적인 이름 사재기와 과당경쟁을 막기위해 2018년에 업그레이 될 예정입니다.",
-        "button": "과정 이해"
+        "description": [
+            "<p>",
+            "ㅋㅋThis app allows you to register a <strong>.eth</strong> domain name for use in ethereum decentralized applications (dapps) and compatible blockchain browsers. Names are not purchased. Each name registered requires depositing some amount of ether directly into its respective registrar contract for a minimum duration of one year, thus no central entity receives the funds. All ether deposited to contract deeds are then temporarily locked until the end of the auction. ",
+            "</p>",
+            "<p>",
+            "ㅋㅋThe registration process begins with an auction in which bids are placed for a name. There are three possible outcomes for bidders:",
+            "</p>",
+            "<ol>",
+                "<li>",
+                "ㅋㅋDuring the designated \"reveal\" period, your bid is revealed to be the highest one and you win the auction. In this case, a deposit equivalent to the value of the second highest bid will be used to secure your name, and the remainder is returned to you :-)",
+                "</li>",
+                "<li>",
+                "ㅋㅋDuring the designated \"reveal\" period, you reveal your bid, but you are not the highest bidder so you do not win the auction. In this case, your entire deposit will be returned to you, minus a 0.5% fee that is burned :-/",
+                "</li>",
+                "<li>",
+                "ㅋㅋIf for any reason you failed to reveal your bid during the designated \"reveal\" period, your entire deposit is burned :-(",
+                "</li>",
+            "</ol>",
+            "<p>",
+            "ㅋㅋOnce a name is requested, a period of 72 hours begins in which anyone can put a sealed bid for it and send the necessary funds (minimum of 0.01 ether). This period is followed by a 48 hour one (the \"Reveal Period\") in which <strong>bids must be revealed. Any bid that is not revealed during Reveal Period results in the loss of its related funds</strong>. Revealing your bid requires information stored in your browser, or backed up using the 'Export Bids' option. The highest bidder after all bids are revealed during this Reveal Period becomes the registrant of the name, and the ether they sent to the contract will be refunded immediately, <strong>minus the value required to outbid the second highest bidder.</strong> The remaining funds are kept locked in a contract for at least a year, after which they can be withdrawn by the registrant upon releasing rights of use of the name. Names with registrants are controlled only by their registrants, who can transfer or release the name until it needs to be renewed.",
+            "</p>",
+            "<p>",
+            "ㅋㅋThe registrar contract is expected to be upgraded in 2018 to include small renewal fees in order to discourage long term squatting and speculation.",
+            "</p>"
+        ],        
+        "buttonUnderstand": "과정 이해"
+    },
+    "explainerBid": {
+        "description": [
+            "<p>",
+                "ㅋㅋNames in Ethereum are used to send ether, to access apps and for other future uses. Names are not \"bought\" from anyone. Ownership is guaranteed by willingness to lock ether for at least a year. While the ether is locked, the owner retains the rights to the domain, including the right to add extradata, create subdomains, lease, loan, sell it or do anything with another smart contract. The locking process takes five days, and the amount of ether locked gets determined by auction. If nobody tries to claim your name in the first week, then you'll be refunded all the funds other than the minimum amount of 0.01 ether.",
+            "</p>",
+            "<p>",
+                "ㅋㅋAfter at minimum a year, the owner can release the name back to the market and thereby recover locked funds. When the permanent registrar is deployed, owners will have the right to move their names to the new registrar or get their ether back. The permanent registrar will probably make sitting on an inactive domain unprofitable by further locking of ether. The current registrar is temporary: it is expected that in 1 to 2 years a new update process will replace it with extra functions to discourage squatting. Names registered now are very likely to be grandfathered in the updated registrar, but you are expected to execute a transaction to move names. The current contract will not accept registrations in 4 years, and any ether remaining on it will become irretrievable after 8 years. Keep yourself informed and be ready to transfer your names in the coming years.",
+            "</p>",
+            "<strong>ㅋㅋMax bidding</strong>",
+            "<p>",
+                "ㅋㅋYou bid for a name by submitting the maximum amount of ether you are willing to lock. If you are outbid, your ether will be refunded. If your bid wins, you will be refunded any amount your bid exceeds a second place bidder. Note: you only need to bid once. Your maximum bid is kept secret until you reveal it.",
+            "</p>"            
+        ]
     },
     "watch": {
         "buttonWatch": "관심리스트에 등록",
@@ -48,39 +109,63 @@
         "description": "당신의 브라우저가 이더리움 블록체인을 읽기 위해서는 <a href=\"https://github.com/ethereum/mist/releases\">미스트</a>, <a href=\"https://ethcore.io/parity.html\">패리티</a> 또는 <a href=\"https://metamask.io\">메타마스크 크롬 확장 프로그램</a>의 설치가 필요합니다."
     },
     "names": {
-        "watchedNames": "네임 보기",
+        "watchedNames": "관심리스트",
         "moreOptions": "추가 옵션",
         "exportBids": "입찰가 내보내기",
-        "importBids": "입찰가 가져오기"
+        "importBids": "입찰가 가져오기",
+        "sortByName": "이름으로 정렬",
+        "sortByMode": "모드로 정렬"       
     },
     "open": {
         "nameIsAvailable": "<strong>%s</strong> - 등록 가능",
-        "whatIsENS1": "이더리움 네임은 이더 전송, 앱 접속과 추후의 다른 용도를 위해 사용됩니다. 네임은 다른 사람으로부터 \"구매\" 하는 것이 아니라, 해당 네임에 대해 최소 1년간 일정액의 이더를 잠구어 둠으로써, 그 소유권을 보장받게 됩니다. 이더가 잠겨 있는 동안, 소유자는 외부데이터를 추가할 권한을 포함하여 도메인에 대한 권한을 소유하며, 서브도메인 창출, 임대, 대여, 판매하거나 다른 스마트 컨트랙트를 연결해 어떤 것이든 할 수 있습니다. 전체 과정은 7일이 소요되며 잠길 이더의 양은 경매에 의해 결정됩니다. 첫째 주에 아무도 당신의 네임에 대하여 이의를 제기하지 않을 경우 <strong>0.01</strong>의 최소 이더 금액 이외를 요청하면 환불됩니다.",
-        "whatIsENS2": "최소 1년 후, 소유자는 시장에 네임을 내 놓고, 묶인 자금을 회수할 수 있습니다. 영구 등록서비스가 출시되면, 소유자는 자신의 네임을 새 등록기를 선택하여 옮기거나 자신의 이더를 가져올 권한을 가집니다. 영구 등록기는 사용하지 않으면서 장기간 도메인을 소유하는 것이 손해가 되도록, 이런 도메인에 대해서는 더욱 많은 이더를 잠궈둬야 하게 만드는 규칙들이 포함될 수도 있습니다.",
         "understand": "이해하였습니다.",
         "understandDescription": "전체 진행 과정과 이에 나의 위험과 책임이 어떻게 연관되어 있는지",
         "buttonOpening": "불러오기...",
-        "buttonOpenWithoutBidding": "Open without bidding",
-        "youOpenBids": "You open bids on an auction that isn't open. Either an error occurred opening the auction, or the auction ended without any bids. In either case, <strong>you must open the auction again to validate your bid</strong>."
+        "buttonOpenAuction": "ㅋㅋOpen Auction",        
+        "buttonOpenWithoutBidding": "ㅋㅋOpen without bidding",
+        "youHaveBidButTheAuctionIsNotOpen": [
+            "<h3>ㅋㅋYou have bid but the auction is not open</h3>",
+            "ㅋㅋYou open bids on an auction that isn't open. Either an error occurred opening the auction, or the auction ended without any bids. In either case, <strong>you must open the auction again to validate your bid</strong>."
+        ],
+        "or": "또는.."        
     },
     "auction": {
-        "isWaitingForBids": "is waiting for bids",
-        "buttonBidsClosed": "Bids closed",
-        "aboutToGoInTheRevealPhase": "<strong> About to go in the reveal phase in a few minutes, bidding is closed </strong>",        
+        "isWaitingForBids": "ㅋㅋis waiting for bids",
+        "buttonBidsClosed": "ㅋㅋBids closed",
+        "aboutToGoInTheRevealPhase": "ㅋㅋ<strong> About to go in the reveal phase in a few minutes, bidding is closed </strong>",        
         "timeRemaining": "공개까지 남은 시간",
-        "attention": "<strong>Attention: Once the reveal phase has begun, you will have 48 hours to reveal your bid. Failing to do so will result in irreversible loss of funds. Revealing requires information stored in your browser; export your bids to make a backup of this.</strong>"
+        "attention": "ㅋㅋ<strong>Attention: Once the reveal phase has begun, you will have 48 hours to reveal your bid. Failing to do so will result in irreversible loss of funds. Revealing requires information stored in your browser; export your bids to make a backup of this.</strong>"
     },
     "bid": {
-        "topBidderPayAtMostEther": "You are willing to pay at most: <strong>%s ether</strong> for this name. You are still the top bidder.",
-        "topBidderRefundedToTheDepositor": "This bid was revealed, <strong>%s ether</strong> were refunded to the depositor.",
-        "notTopBidderPayAtMostEther": "You were willing to pay at most: <strong>%s ether</strong> but since someone else was willing to pay more, your full deposit was returned, minus a bidding fee of <strong>%s ether</strong> which was burned.",
+        "topBidderPayAtMostEther": "ㅋㅋYou are willing to pay at most: <strong>%s ether</strong> for this name. You are still the top bidder.",
+        "topBidderRefundedToTheDepositor": "ㅋㅋThis bid was revealed, <strong>%s ether</strong> were refunded to the depositor.",
+        "notTopBidderPayAtMostEther": "ㅋㅋYou were willing to pay at most: <strong>%s ether</strong> but since someone else was willing to pay more, your full deposit was returned, minus a bidding fee of <strong>%s ether</strong> which was burned.",
         "payAndDeposite": "당신은 최고 입찰가는 <strong>%s 이더</strong>였고,  <strong>%s 이더</strong>가 입금되었습니다.",
         "buttonRevealing": "공개하기...",
         "recoverEther": "%s 이더 복구",
         "payEther": "당신의 최고 입찰가: <strong>%s 이더</strong>",
-        "willRefundedWhenYouReveal": "<strong>%s ether</strong> will refunded when you reveal your bid",
+        "willRefundedWhenYouReveal": "ㅋㅋ<strong>%s ether</strong> will refunded when you reveal your bid",
         "buttonReveal": "공개"
     },
+    "newBid": {
+        "howMuchDoYouValueThisName": "ㅋㅋHow much do you value this name?",
+        "sendTheMaximumAmount": "ㅋㅋSend the maximum amount of value you would be willing to lock for this name:",
+        "protectBidAnonymity": [
+            "<h3>ㅋㅋProtect bid anonymity</h3>",
+            "ㅋㅋTo keep the bid secret, we strongly recommend sending an extra amount"
+        ],
+        "maxFee": "ㅋㅋMax Fee",
+        "cheaper": "저렴한",
+        "faster": "빠른",        
+        "hideOptions": "ㅋㅋHide options",
+        "showMoreOptions": "ㅋㅋShow more options",
+        "understand": "이해하였습니다",
+        "understandDescription": "ㅋㅋhow the process works and my risks and responsibilities involved",
+        "buttonBid": "입찰",
+        "buttonLoadingDictionary": "ㅋㅋLoading dictionary..",
+        "buttonBidding": "ㅋㅋBidding..",
+        "ether": "이더"
+    },    
     "owned": {
         "youOwn": "<strong>%s</strong> 소유",
         "nameIsOwned": "<strong>%s</strong>을 소유함",
@@ -88,7 +173,17 @@
         "deedValueIsMin": "최소 <em>0.01 이더</em> 이상의 다른 입찰자가 없습니다.",
         "secondHighestBid": "두번째 높은 입찰가는 <em>%s 이더</em> 입니다.",
         "ownedBy": "소유자:",
+        "assignedTo": "ㅋㅋCurrently assigned to:",
         "renewDate": "다음 일짜까지 갱신 필요 : <strong>%s</strong>",
+        "ownerHasnotSetUpAnything": "Owner hasn't set up anything",
+        "claimedTheir": "ㅋㅋor claimed their <strong>%s ether</strong> ether",
+        "yet": "ㅋㅋyet",
+        "buttonSettingItUp": "ㅋㅋSetting it up...",
+        "buttonSetUpYourName": "ㅋㅋSet up your name",
+        "etherBack": "(ㅋㅋand get %s  ether back)",
+        "onlyOwnerCanSetUp": "ㅋㅋOnly owner can set up",
+        "mainEthereumAddress": "ㅋㅋMain Ethereum address:",
+        "contenHash": "ㅋㅋContent hash for apps (IPFS/Swarm):",
         "records": "기록",
         "buttonApplying": "적용 중...",
         "buttonCancel": "취소",
@@ -97,11 +192,12 @@
         "notSet": "설정 안됨",
         "content": "내용:",
         "recordsAreNotEnabled": "이 네임에 대한 기록이 활성화되지 않았습니다(리졸버resolver를 발견하지 못함).",
-        "basicResolver": "A resolver is a contract that can answer queries about your domain. You can choose any resolver but at the moment we deployed a basic resolver that can answer about ethereum addresses and content hashes.",
+        "basicResolver": "ㅋㅋA resolver is a contract that can answer queries about your domain. You can choose any resolver but at the moment we deployed a basic resolver that can answer about ethereum addresses and content hashes.",
         "buttonSettingResolver": "리졸버 설정 중...",
-        "buttonSetResolver": "Set to default resolver",
+        "buttonSetResolver": "ㅋㅋSet to default resolver",
         "transferOrRelease": "이전 또는 해제",
         "transferOwnership": "다른 계정으로 %s의 소유권을 이전",
+        "attention": "<strong>ㅋㅋATTENTION: THIS IS IRREVERSIBLE</strong> once a name is transferred, only the new owner can transfer it back. Transferring a name also transfers the deposit to the new owner. Make sure you know what you're doing.",        
         "accountToTransfer": "소유권을 이전할 계정:",
         "buttonTransferring": "이전 중...",
         "buttonTransfer": "이전",
@@ -113,14 +209,14 @@
         "expiredBidsAreBurned": "당신은 입찰하고서 정해진 시간 내 공개하지 않은 입찰이 있습니다. 기간이 만료한 입찰은 없어지며 당신은 0.1%을 환불 받을 수 있습니다.",
         "aboutThisName": "해당 네임 정보",
         "etherLockedInThisName": "<span class=\"big-numeral\">%s</span> <span class=\"unit\">이더</span>가 이 네임에 잠금되어 있음",
-        "etherStillHeldInThisName": "<span class=\"big-numeral\">%s</span> <span class=\"unit\">ether</span> still held in this name"        
+        "etherStillHeldInThisName": "ㅋㅋ<span class=\"big-numeral\">%s</span> <span class=\"unit\">ether</span> still held in this name"        
     },
     "backup": {
         "title": "당신의 입찰 백업",
-        "description": "Your bids are sealed with a secret to protect their anonymity, so you need that key to reveal. Backing the bids up allows you to restore them in case of data loss. Only the bidding account can reveal it, so make sure you that's safe too. ",
-        "button": "Download %s bids",
-        "noBidsFound": "<strong> No bids found.</strong> You can still download data that might be used to recover lost bids in the future ",
-        "buttonDownloadMasterSecret": "Download master secret"
+        "description": "ㅋㅋYour bids are sealed with a secret to protect their anonymity, so you need that key to reveal. Backing the bids up allows you to restore them in case of data loss. Only the bidding account can reveal it, so make sure you that's safe too. ",
+        "button": "ㅋㅋDownload %s bids",
+        "noBidsFound": "ㅋㅋ<strong> No bids found.</strong> You can still download data that might be used to recover lost bids in the future ",
+        "buttonDownloadMasterSecret": "ㅋㅋDownload master secret"
     },
     "restore": {
         "title": "입찰 가져오기",
@@ -128,7 +224,7 @@
         "totalBids": "이 파일 %s 개의 입찰이 있습니다.",
         "newBids": "%s 개의 새 입찰을 가져오게 됩니다.",
         "noNewBids": "가져올 새 입찰 기록이 없습니다.",
-        "noBidsToImport": "No bids to import",        
+        "noBidsToImport": "ㅋㅋNo bids to import",        
         "button": "입찰 가져오기"
     },
     "errors": {
@@ -141,5 +237,127 @@
         "initializingENS": "ENS 등록기 초기화 중...",
         "connecting": "이더리움 네트워크 접속 중...",
         "ready": "준비완료!"
+    },
+    "explainer":  { 
+        "description": [
+        "<h1> ㅋㅋEthereum Name System (ENS)</h1>",
+
+        "<h2> ㅋㅋWhat is it and what it isn't </h2>",
+        "<p>",
+            "The ENS is a system that was created to provide shorter, more human-friendly names in place of long addresses, such as ethereum addresses or Swarm hashes that are often used in the ethereum ecosystem.</p>",
+        "<p>",
+            "<strong>ENS is not a domain system:</strong> In the sense of internet domains, as managed by ICANN, ENS is not a domain system. While it can be used in a similar fashion on apps that replicate browser functionality, like Mist or Metamask, there is no claim on the \".eth\" top level domain system, which can only be managed by ICANN.",
+        "</p><p>",
+            "<strong>ENS does not grant a trademark or any sort of claim on ownership:</strong> registering an ENS name is a fully automated process and does not indicate ownership of any given trademark, copyright, brand name or any other kind of intellectual property.",
+
+       " </p><p>",
+            "<strong>This process is not a sale:</strong> ENS names are not sold or leased by any party or entity. While the process of claiming a name involves locking and/or burning funds, these processes were created to disincentive spamming and try to it make so that names are only claimed by users who will make use of them. All ether spent on the process is either given back to the bidder after some time, sent to a burn address or sent to a miner.",
+        "</p>",
+
+        "<h2> How the process works </h2>",
+        "<p>",
+            "<strong>The process of claiming a name takes five (5) days and requires multiple transactions that are time sensitive and often irreversible, so it will be important for you to fully understand the process  to ensure you do not irreversibly lose your ether. </strong>",
+        "</p> <p>", 
+            "Users start the process by opening a public auction for the name they want, which will send an alert that can be seen to anyone watching the blockchain for that specific name. After the auction is opened anyone who knows how to spell that name can bid on it in the next five days, by sending a transaction with the maximum amount they are willing to pay for the name. Bids are accepted until 72 hours after the initial auction opens. After that time, a 48 hour reveal phase starts <strong> during which, anyone who bids must reveal their bids (failing to do so will result in irreversible loss of funds)</strong>. The information required to reveal your bid is stored in your browser's local storage; we strongly recommend using the 'Export Bids' option to ensure you retain a copy of the necessary information.",
+        "</p> <p>",
+            "The bidder who was willing to pay the most for the name will be the registrant, but they will only pay an amount equal to the amount of the second highest bid. ",
+        "</p> <p>",
+            "Once the auction process is finished, the user needs to finalize their name to complete the auction, after which they will be able to transfer rights of use to someone else, add a subregistrar (eg. mysubdomain.mydomain.eth) or add record types associated with the name (ethereum address, bitcoin address, swarm content, etc). ",
+
+        "</p> <p>",
+            "After one year, the registrant can release the name back to the market and retrieve the ether they deposited to the contract, if they so wish. After two years, it is expected that an updated version of the registrar will be deployed, which might require some sort of recurring fee, deposit or some other way to encourage unused names to be released back in the market.",
+
+        "</p>",
+
+        "<h2> ㅋㅋWhat names are valid? </h2>",
+
+        "<p>",
+            "As names are hashed during the auction process to increase privacy, any name, string or file could, in theory be owned via this process. At this time, names that are shorter than seven (7) characters are reserved until the system is more mature. If a user proceeds to registered, the name can be invalidated, which would result in irreversible loss of funds by the registrant. ",
+        "</p>",
+
+        "<h2>What names are discouraged?</h2>",
+
+        "<p>",
+            "Names that use any character outside of alphanumeric, hyphen and underscore, while valid, are not guaranteed to be resolved by the wallet or client software.",
+        "</p>",
+
+        "<h2> How much ether is needed </h2>",
+
+        "<p>",
+
+            "The minimum amount required for a bid is 0.01 ether. When bids are revealed, any extra ether that was sent to mask the bid value will be returned in full. The auction registrar will apply some fees that are proportional to the bid value, in order to discourage spamming. See the following fees below:",
+
+            "<ul>",
+                "<li>",
+                    "Non-winning bid: 0.5% is burned, 99.5% is returned.",
+                "</li>",
+                "<li>",
+                    "Once the auction is over, the winning bid is locked for at least one year: 100% remains in the contract until released.",
+                "</li>",
+                "<li>",
+                    "Bids that are not revealed during the 48-hour reveal period will be completely and irreversibly burned. The extra ether sent to the contract in addition to the bid amount, such as ether sent to mask the bid value, and an extra 0.5% of the bid value will be returned.",
+                "</li>",
+                "<li>",
+                    "Bids not revealed for more than 4 weeks are by definition invalid and can be cleared by anyone, even if the bid is still anonymous. In this case, the user doing the clearing will get 0.5% of the full deposit of the bid, and the remainder will be burned.",
+                "</li>",
+                "<li>",
+                    "Note that anyone can invalidate a name. If a name gets invalidated, 50% of the deposit will go to the user doing the invalidation, and the remaining amount will be returned to bidder.",
+                "</li>",
+            "</ul>",
+
+        "</p>",
+
+        "<h2> Responsibilities </h2>",
+        
+        "<p>",
+        "<ul>",
+            
+        "</ul>",
+            "<li> <strong>You are responsible for your own computer security and usage.</strong> Any consequence of the misuse of this code is your sole responsibility. No other party, nor any other entity can be held liable for any unintended consequence, loss of funds, illegal activity or any other issue that results from misuse of the code, use of the code for any purpose other than the intended purpose and any other \"bad\" usage of the code, including bugs in the current implementation. The full code can be inspected <a href=\"https://github.com/ethereum/ens\">on this code repository</a> but the deployment and usage of this piece of code is your own responsibility.</li>",
+
+            "<li> <strong>You are responsible for your own actions.</strong> If you mess something up or break any laws while using this software, it's your fault, and your fault only. </li>",
+
+            "<li> <strong> You are responsible for your own karma.</strong> Don't be a jerk and respect others.  </li>",
+        
+            "<p>",
+                "For the avoidance of  doubt, ENS is not responsible for any losses, damages or claims arising from, but not limited to:",
+            "</p>",
+
+            "<ol>",
+                "<li>",
+                    "Mistakes made by the user of the code e.g., payments sent to wrong address, bidding of the wrong name, failure to reveal bids within time limits.",
+                "</li>",
+                "<li>",
+                    "Software problems, e.g., incorrectly constructed transactions, defective code, temporary disruption of service, malware affecting the ENS registrar and/or any related software or service.",
+                "</li>",
+                "<li>",
+                    "Security problems experienced by the user, e.g., unauthorized bid reveals.",
+                "</li>",
+                "<li>",
+                    "Actions or inactions of third parties and/or events experienced by third parties, e.g., information security attacks, and fraud conducted by third parties.",
+                "</li>",
+            "</ol>",
+            
+
+            "<p><strong> Risk of Loss </strong></p>",
+
+            "<p>",
+                "Bidding in the auction can lead to loss of value as described above.  In addition, you can lose the right to a name if you do not take the correct steps to claim a winning bid or if there are intervening factors that impair you from claiming a winning a bid.",
+            "</p>",
+
+        "</p>",
+
+        "<h2>Disclaimer; Liabilities and Warranties </h2>",
+
+        "<p>",
+            "The user expressly knows and agrees that the user is using ENS at the user’s sole risk. The user represents that the user has an adequate understanding of the risks, usage and intricacies of cryptographic tokens,open source software, ethereum platform and ether. <br>",
+            
+            "THE USER EXPRESSLY AGREES THE NO PARTY (INCLUDING THE KEYHOLDERS OR ANY INDIVIDUAL OR ORGANIZATION THAT MAY HAVE CONTRIBUTED TO THE DEVELOPMENT OF THE ENS OR ETHEREUM) WILL BE LIABLE UNDER ANY CAUSE OF ACTION OR THEORY OF LIABILITY, EVEN IF SUCH PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES, AND THE USER SHALL HOLD ALL OTHER PARTIES HARMLESS, FOR ANY (A) INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR EXEMPLARY DAMAGES, (B) LOSS OF PROFITS, REVENUES, OPPORTUNITIES, OR GOODWILL, (C) UNAVAILABILITY OF ANY OR ALL OF THE ENS, (D) INVESTMENTS, EXPENDITURES OR COMMITMENTS BY USER RELATED TO USE OF OR ACCESS TO THE ENS, (E) COST OF PROCUREMENT OF SUBSTITUTE GOODS OR SUBSTITUTE SERVICES, (F) UNAUTHORIZED ACCESS TO USER CONTENT, OR ANY COMPROMISE, ALTERATION OR LOSS OF USER CONTENT, (G) COST OF REPLACEMENT OR RESTORATION OF ANY LOST OR ALTERED USER CONTENT, (H) ACTS OR OMISSIONS ATTRIBUTABLE TO ANY THIRD-PARTY, (I) LOST ETHER OR INABILITY TO SECURE DESIRED NAMES, (J) DEFECTIVE CODE OR (K) THE EXECUTION OF THE CODE. <br>",
+
+            "USER ACKNOWLEDGES AND AGREES THAT NO PARTY (INCLUDING THE KEYHOLDERS OR ANY INDIVIDUAL OR ORGANIZATION THAT MAY HAVE CONTRIBUTED TO THE DEVELOPMENT OF THE ENS OR ETHEREUM) IS ACTUALLY RESPONSIBLE FOR OPERATION OF THE ENS AND THAT LIKE ANY OTHER COMPUTER PROGRAM, THE ENS’ OPERATIONS ARE LIMITED TO HOW COMPUTATION LOGIC INTERPRETS THE OPENLY DISCLOSED SOURCE CODE AND THAT NO PARTY (INCLUDING THE KEYHOLDERS OR ANY INDIVIDUAL OR ORGANIZATION THAT MAY HAVE CONTRIBUTED TO THE DEVELOPMENT OF THE ENS OR ETHEREUM)  CAN GUARANTEE THAT THE ENS WILL WORK AS INTENDED (OR EVEN WORK IN A MANNER THAT IS CONSISTENT WITH THIS DOCUMENT). USER IS AWARE THAT SOLE RELIANCE ON A COMPUTER PROGRAM’S COMPUTATIONAL LOGIC CARRIES SIGNIFICANT RISK OF UNINTENDED RISKS OR RESULTS AND THAT IN THE EVENT OF AN ERROR, NO PARTY (INCLUDING THE KEYHOLDERS OR ANY INDIVIDUAL OR ORGANIZATION THAT MAY HAVE CONTRIBUTED TO THE DEVELOPMENT OF THE ENS OR ETHEREUM) IS OBLIGATED TO FIX OR REMEDIATE ANY PROBLEM. <br>",
+
+            "USER FURTHER ACKNOWLEDGES AND AGREES THAT THERE ARE NO OTHER REPRESENTATIONS OR WARRANTIES OF ANY KIND, WHETHER EXPRESS, IMPLIED, STATUTORY OR OTHERWISE, REGARDING THE ENS, AND USER HEREBY DISCLAIMS ALL OTHER WARRANTIES, INCLUDING ANY IMPLIED OR EXPRESS WARRANTIES: (A) OF MERCHANTABILITY, SATISFACTORY QUALITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, OR QUIET ENJOYMENT; (B) ARISING OUT OF ANY COURSE OF DEALING OR USAGE OF TRADE; (C) THAT THE ENS WILL BE UNINTERRUPTED, ERROR FREE, OR FREE OF HARMFUL COMPONENTS; (D) THAT THE ENS OR ANY CONTENT, INCLUDING USER CONTENT OR THIRD-PARTY CONTENT, WILL BE SECURE OR NOT OTHERWISE LOST OR DAMAGED; AND (D) THE ENS WILL HAVE ANY FUNCTIONALITY THAT IS NOT A NATURAL RESULT OF HOW THE SOURCE CODE SHOULD BE INTERPRETED.",
+        "</p>"
+        ] 
     }
 }

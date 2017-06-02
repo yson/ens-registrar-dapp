@@ -2,10 +2,7 @@
     <div>
       <h1 class="domain-name">{{{_ "open.nameIsAvailable" name}}}</h1> 
         {{>component_explainerBid}}
-
-        
-        
-      </div>
+    </div>
 
       {{#unless hasBids}}
       {{#if hasNode}}
@@ -13,7 +10,7 @@
           {{>components_newBid}}
 
           <p>
-          Or..
+          {{_ "open.or"}}
           </p>
 
           <button type="submit" class="open-auction" disabled={{opening}}> 
@@ -29,9 +26,7 @@
         {{/if}}
       {{else}}
       <div class="unused-bids">
-          <h3>You have bid but the auction is not open</h3>
-
-          You open bids on an auction that isn't open. Either an error occurred opening the auction, or the auction ended without any bids. In either case, <strong>you must open the auction again to validate your bid</strong>.
+          {{{_ "open.youHaveBidButTheAuctionIsNotOpen"}}}
 
           {{#each bid in bids}}
           {{> components_bid bid=bid status='open' }}
@@ -40,9 +35,9 @@
           <br>
           <button type="submit" class="open-auction dapp-block-button" disabled={{opening}}> 
             {{#if opening}}
-              Opening...
+              {{{_ "open.buttonOpening"}}}
             {{else}}
-              Open Auction
+              {{{_ "open.buttonOpenAuction"}}}
             {{/if}}
           </button>
       </div>

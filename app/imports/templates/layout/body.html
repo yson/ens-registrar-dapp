@@ -8,7 +8,7 @@
         {{#if (TemplateVar.get 'networkError')}}
           {{> useCustomContract }}
         {{else}}
-          <h1>Something has gone awry</h1>
+          <h1>{{{_ "body.somethingHasGoneAwry"}}}</h1>
           <p>{{TemplateVar.get 'description'}}</p>
           <button class="dapp-block-button retry">Retry</button>
         {{/if}}
@@ -23,16 +23,15 @@
 
 <template name="useCustomContract">
   <div class="use-custom-contract">
-    <h1>Unsupported network</h1>
+    <h1>{{{_ "body.unsupportedNetwork"}}}</h1>
     <p>
-      ENS is only running on the Ropsten testnet network for now,
-      but you can enter a custom ENS contract address.
+      {{{_ "body.youCanEnterACustomENS"}}}
     </p>
     <p>
-      Custom ENS address: {{> dapp_addressInput class="ens-address" }}
+      {{{_ "body.customENSAddress"}}} {{> dapp_addressInput class="ens-address" }}
     </p>
     <p>
-      <button class="dapp-block-button">Use custom address</button>
+      <button class="dapp-block-button">{{{_ "body.buttonUseCustomAddress"}}}</button>
     </p>
   </div>
 </template>

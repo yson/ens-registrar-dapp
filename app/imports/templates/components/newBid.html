@@ -1,43 +1,42 @@
 <template name="components_newBid">
   <form class="new-bid">
-      <br><h3>How much do you value this name?</h3>          
+      <br><h3>{{{_ "newBid.howMuchDoYouValueThisName"}}}</h3>
       <p>
-        Send the maximum amount of value you would be willing to lock for this name:<br>
-        <input type="text" min="0.01" step="any" name="bidAmount" placeholder="0.01" class="bid-amount dapp-large" pattern="[0-9\.,]*" value="{{TemplateVar.get 'bidAmount'}}"> <span>ether</span>
+        {{{_ "newBid.sendTheMaximumAmount"}}}<br>
+        <input type="text" min="0.01" step="any" name="bidAmount" placeholder="0.01" class="bid-amount dapp-large" pattern="[0-9\.,]*" value="{{TemplateVar.get 'bidAmount'}}"> <span>{{{_ "newBid.ether"}}}</span>
       </p>
       <br>
       {{#if TemplateVar.get 'showAdvanced'}}
-          <h3>Protect bid anonymity</h3>
-        To keep the bid secret, we strongly recommend sending an extra amount 
+        {{{_ "newBid.protectBidAnonymity"}}}
         <br>
-        <input type="text" min="0.01" step="0.1" name="depositAmount" placeholder="0.01" class="deposit-amount dapp-large" value="{{depositAmount}}"> <span>ether</span>  
+        <input type="text" min="0.01" step="0.1" name="depositAmount" placeholder="0.01" class="deposit-amount dapp-large" value="{{depositAmount}}"> <span>{{{_ "newBid.ether"}}}</span>  
         <br>
-        <h3>Max Fee</h3>
+        <h3>{{{_ "newBid.maxFee"}}}</h3>
 
-        {{> dapp_selectGasPrice gas=650000 gasPrice=20000000000 low='cheaper' high='faster'}} <br>
+        {{> dapp_selectGasPrice gas=650000 gasPrice=20000000000 low=(_ "newBid.cheaper") high=(_ "newBid.faster") }} <br>
         <em>{{feeExplainer}}</em> <br><br>
 
-        <a href="#" class="hide-advanced">Hide options</a>
+        <a href="#" class="hide-advanced">{{{_ "newBid.hideOptions"}}}</a>
 
       {{else}}
-        <a href="#" class="show-advanced">Show more options</a>
+        <a href="#" class="show-advanced">{{{_ "newBid.showMoreOptions"}}}</a>
       {{/if}}
         <br>
 
-      <p class="clear"><input type="checkbox" id="agreement" name="agreement"> <label for="agreement">I understand <a href="#terms" class="explainer">how the process works and my risks and responsibilities involved </a>.</label></p>
+      <p class="clear"><input type="checkbox" id="agreement" name="agreement"> <label for="agreement">{{{_ "newBid.understand"}}} <a href="#terms" class="explainer">{{{_ "newBid.understandDescription"}}} </a>.</label></p>
       <p class="clear">
         {{#if bidding}}
             {{#if dictionaryLoaded}}
                 {{#if TemplateVar.get 'agree'}}
-                    <button type="submit" class="dapp-block-button"> Bid </button>  
+                    <button type="submit" class="dapp-block-button"> {{{_ "newBid.buttonBid"}}} </button>  
                 {{else}}
-                    <button type="submit" class="dapp-block-button" disabled="true"> Bid </button>
+                    <button type="submit" class="dapp-block-button" disabled="true"> {{{_ "newBid.buttonBid"}}} </button>
                 {{/if}}
             {{else}}
-                <button type="submit" class="dapp-block-button" disabled="true"> Loading dictionary.. </button>
+                <button type="submit" class="dapp-block-button" disabled="true"> {{{_ "newBid.buttonLoadingDictionary"}}} </button>
             {{/if}}
         {{else}}
-            <button type="submit" class="dapp-block-button" disabled="true"> Bidding.. </button>
+            <button type="submit" class="dapp-block-button" disabled="true"> {{{_ "newBid.buttonBidding"}}} </button>
         {{/if}}          
       </p>
     </form>

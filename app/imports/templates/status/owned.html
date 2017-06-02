@@ -8,37 +8,37 @@
   <p>
       {{{_ "owned.deedValueIsMin"}}}
   {{#if noBids}} 
-      No other bid was above the minimum of <em>0.01 ether</em>.      
+      {{{_ "owned.deedValueIsMin"}}}
   {{else}} 
       {{{_ "owned.secondHighestBid" finalValue}}}
   {{/if}}
   </p>
 
   {{#if needsFinalization}}
-    <p>Owned by: {{> components_address addr=deedOwner}} </p>
+    <p>{{{_ "owned.ownedBy"}}} {{> components_address addr=deedOwner}} </p>
     {{#if hasOwner}}
-      <p>Currently assigned to: {{> components_address addr=owner}} </p>
+      <p>{{{_ "owned.assignedTo"}}} {{> components_address addr=owner}} </p>
     {{/if}}
-    <p>Needs to be renewed by: <strong>{{renewalDate}}</strong></p> 
+    <p>{{{_ "owned.renewDate" renewalDate}}}</p> 
 
-    <p> Owner hasn't set up anything{{#if canRefund}}, or claimed their <strong>{{dapp_formatBalance refund "0,0.00[0000]"}} ether</strong> ether {{/if}} yet.</p>
+    <p> {{{_ "owned.ownerHasnotSetUpAnything"}}} {{#if canRefund}}, {{{_ "owned.claimedTheir" (dapp_formatBalance refund "0,0.00[0000]") }}}  {{/if}} {{{_ "owned.yet"}}}.</p>
 
     {{#if hasNode}}
       {{#if isMine}}
 
         <button class="dapp-block-button finalize" disabled={{finalizing}}>
           {{#if finalizing}}
-            Setting it up...
+            {{{_ "owned.buttonSettingItUp"}}}
           {{else}}
-            Set up your name 
+            {{{_ "owned.buttonSetUpYourName"}}}
             {{#if canRefund}}
-            (and get {{dapp_formatBalance refund "0,0.00[0000]"}}  ether back)
+            {{{_ "owned.etherBack" (dapp_formatBalance refund "0,0.00[0000]") }}}
             {{/if}}
           {{/if}}
         </button>
 
       {{else}}
-        <button class="dapp-block-button disabled" disabled>Only owner can set up</button>      
+        <button class="dapp-block-button disabled" disabled>{{{_ "owner.onlyOwnerCanSetUp"}}} </button>
       {{/if}}
     {{else}}
     {{> components_noNode}}
@@ -46,15 +46,15 @@
 
   {{else}}
 
-    <p>Owned by: {{> components_address addr=owner}} </p>
-    <p>Needs to be renewed by: <strong>{{renewalDate}}</strong></p>
+    <p>{{{_ "owned.ownedBy"}}} {{> components_address addr=owner}} </p>
+    <p>{{{_ "owned.renewDate" renewalDate}}}</p>
  
 
   <div class="records-section">
     <hr>
     {{#if (TemplateVar.get 'hasSetResolver')}}
       <p class="addr-record">
-        <h3>Main Ethereum address:</h3>
+        <h3>{{{_ "owned.mainEthereumAddress"}}}</h3>
         {{#if (TemplateVar.get 'editingAddr')}}
           {{> dapp_addressInput }} <br>
           
@@ -78,24 +78,24 @@
         {{/if}}
       </p>
       <p class="content-record">
-        <h3>Content hash for apps (IPFS/Swarm):</h3>
+        <h3>{{{_ "owned.contenHash"}}}</h3>
 
         {{#if (TemplateVar.get 'editingHash')}}
           <input type="text" class="content-input" value="{{TemplateVar.get 'newHash'}}"> <br><br>
           
           {{#if (TemplateVar.get 'settingHash')}}
-            <button class="dapp-block-button disabled dapp-small" disabled>Applying...</button>
-            <button class="dapp-block-button disabled dapp-small" disabled>Cancel</button>
+            <button class="dapp-block-button disabled dapp-small" disabled>{{{_ "owned.buttonApplying"}}}</button>
+            <button class="dapp-block-button disabled dapp-small" disabled>{{{_ "owned.buttonCancel"}}}</button>
           {{else}}
-            <button class="dapp-block-button set-hash dapp-small">Apply</button>
-            <button class="dapp-block-button cancel-edit-hash dapp-small">Cancel</button>
+            <button class="dapp-block-button set-hash dapp-small">{{{_ "owned.buttonApply"}}}</button>
+            <button class="dapp-block-button cancel-edit-hash dapp-small">{{{_ "owned.buttonCancel"}}}</button>
           {{/if}}
           
         {{else}}
           {{#if records.content}}
             <a href="bzz://{{records.content}}/">bzz://{{records.content}}/</a> <br><br>
             {{#if isMine}}
-              <button class="dapp-block-button edit-hash dapp-small">Edit</button>
+              <button class="dapp-block-button edit-hash dapp-small">{{{_ "owned.buttonEdit"}}}</button>
             {{/if}}
           {{else}}
             <span>not set</span>
@@ -106,7 +106,7 @@
 
       </p>
     {{else}}
-      <h3>Records</h3>
+      <h3>{{{_ "owned.records"}}}</h3>
       <p>
         {{_ "owned.recordsAreNotEnabled"}}
       </p>
@@ -127,11 +127,11 @@
     {{#if isMine}}
     <div class="transfer-section">
         <hr>    
-        <h3>Transfer or Release</h3>
-        <p>Transfer ownership of <strong>{{name}}</strong> to another account <br></p>
-        <p><strong>ATTENTION: THIS IS IRREVERSIBLE</strong> once a name is transferred, only the new owner can transfer it back. Transferring a name also transfers the deposit to the new owner. Make sure you know what you're doing.</p>
+        <h3>{{{_ "owned.transferOrRelease"}}}</h3>
+        <p>{{{_ "owned.transferOwnership" name}}} <br></p>
+        <p>{{{_ "owned.attention"}}}</p>
         <p>
-        Account to transfer the name to: 
+        {{{_ "owned.accountToTransfer"}}}
         </p>
         <p>
         {{> dapp_addressInput }}

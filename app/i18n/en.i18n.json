@@ -4,10 +4,22 @@
         "mainTitle": "Look up an Ethereum Name",
         "inputPlaceHolder": "type a name"
     },
+    "body": {
+        "somethingHasGoneAwry": "Something has gone awry",
+        "unsupportedNetwork": "Unsupported network",
+        "youCanEnterACustomENS": [
+            "ENS is only running on the Ropsten testnet network for now,",
+            "but you can enter a custom ENS contract address."
+        ],
+        "customENSAddress": "Custom ENS address:",
+        "buttonUseCustomAddress": "Use custom address"
+    },    
     "nameStatus": {
         "register": "Check availability of an Ethereum Name",
+        "statsOnRecentAuctions": "Stats on recent auctions",
         "namesRegisteredForMinimumAmount": "<span class=\"big-numeral\">%s</span> <span class=\"unit\">percent</span> <br> names registered for minimum amount",
         "medianPricePaid": "<span class=\"big-numeral\">%s</span> <span class=\"unit\">ether</span> <br> median price paid per disputed name",
+        "youAreNotOnTheMainNetwork": "<p><strong>You are NOT on the main Network, but on the %s network. Names bought here are not valid on the main net.</strong></p>",
         "knownsAuctions": "Knowns Auctions Started recently",
         "auctionsAreSemiPrivate": "Auctions are semi private: they are only seen by those who know the name. Some popular domains are therefore identifiable, but secret names are kept private until the owner decides to become public.",
         "lastChanceToBid": "Last chance to bid!",        
@@ -21,6 +33,18 @@
         "aboutThisName": "About this name",
         "lockedInThisName": "locked in this name",
         "invalidatorFee": "will be paid to the first to report this invalid name",
+        "nameIsNotYetAvailable": [
+            "<h1><strong>%s</strong> is not yet available</h1>",
+            "<p>",
+            "Names are being released on a distributed schedule. Registration for this name can be requested by anyone after <strong>%s</strong>. ",
+            "</p>",
+            "<p>",
+            "Once a name is requested, a period of 72 hours begins in which anyone can put a sealed bid for it and send the necessary funds (minimum of 0.01 ether). This period is followed by a 48 hour one (the \"Reveal Period\") in which <strong>bids must be revealed. Any bid that is not revealed during Reveal Period results in the loss of its related funds</strong>. Revealing your bid requires information stored in your browser, or backed up using the 'Export Bids' option. The highest bidder after all bids are revealed during this Reveal Period becomes the registrant of the name, and the ether they sent to the contract will be refunded immediately, <strong>minus the value required to outbid the second highest bidder.</strong> The remaining funds are kept locked in a contract for at least a year, after which they can be withdrawn by the registrant upon releasing rights of use of the name. Names with registrants are controlled only by their registrants, who can transfer or release the name until it needs to be renewed.",
+            "</p>"
+        ],
+        "buttonCannotOpenNow": "Cannot open now",
+        "canBeRequestedIn": "Can be requested in",
+        "ifYouHavePreviouslyBid": "You don't have any bids for this name. If you have previously bid, then <a href=\"\" class=\"import-bids\">Import your bids backup</a> to see and reveal them.",
         "waitingForBidsToBeRevealed": "<strong>%s</strong> waiting for bids to be revealed",
         "afterAuctionEndsIts72h": "After an auction ends its 72h period of bidding, all bidders have 48h to reveal their bids or forfeit their whole deposit. During this period, no new bids can be made. If no bids are revealed, the name can be requested again after this period ends.",
         "yourBids": "Your bids",
@@ -35,10 +59,47 @@
         "buttonFinalizeIt": "Finalize it"
     },
     "explainerBody": {
-        "description1": "This app allows you to register a <strong>.eth</strong> domain name, for use in ethereum decentralized applications and compatible blockchain browsers. Names are not bought <em>from</em> any particular organization and there is no central entity receiving any funds for this, all ether spent on this app that isn't being used to pay transactions fees is either temporarily locked or burned.",
-        "description2": "To claim a name, you must be willing to lock some amount of ether for at least a year, after which you can get the ether back by releasing the name. The process takes a week and the name will go to the account that values the name the most and is willing to lock more for it (minimum of 0.01). After names are owned, they will be controlled only by their owners, which will be able to transfer or release them, until it needs to be renewed. The contract is expected to be upgraded in 2018 to create small renewal costs, to discourage long term squatting and gold-rushing.",
-        "button": "Understand the process"
+        "description": [
+            "<p>",
+            "This app allows you to register a <strong>.eth</strong> domain name for use in ethereum decentralized applications (dapps) and compatible blockchain browsers. Names are not purchased. Each name registered requires depositing some amount of ether directly into its respective registrar contract for a minimum duration of one year, thus no central entity receives the funds. All ether deposited to contract deeds are then temporarily locked until the end of the auction. ",
+            "</p>",
+            "<p>",
+            "The registration process begins with an auction in which bids are placed for a name. There are three possible outcomes for bidders:",
+            "</p>",
+            "<ol>",
+                "<li>",
+                "During the designated \"reveal\" period, your bid is revealed to be the highest one and you win the auction. In this case, a deposit equivalent to the value of the second highest bid will be used to secure your name, and the remainder is returned to you :-)",
+                "</li>",
+                "<li>",
+                "During the designated \"reveal\" period, you reveal your bid, but you are not the highest bidder so you do not win the auction. In this case, your entire deposit will be returned to you, minus a 0.5% fee that is burned :-/",
+                "</li>",
+                "<li>",
+                "If for any reason you failed to reveal your bid during the designated \"reveal\" period, your entire deposit is burned :-(",
+                "</li>",
+            "</ol>",
+            "<p>",
+            "Once a name is requested, a period of 72 hours begins in which anyone can put a sealed bid for it and send the necessary funds (minimum of 0.01 ether). This period is followed by a 48 hour one (the \"Reveal Period\") in which <strong>bids must be revealed. Any bid that is not revealed during Reveal Period results in the loss of its related funds</strong>. Revealing your bid requires information stored in your browser, or backed up using the 'Export Bids' option. The highest bidder after all bids are revealed during this Reveal Period becomes the registrant of the name, and the ether they sent to the contract will be refunded immediately, <strong>minus the value required to outbid the second highest bidder.</strong> The remaining funds are kept locked in a contract for at least a year, after which they can be withdrawn by the registrant upon releasing rights of use of the name. Names with registrants are controlled only by their registrants, who can transfer or release the name until it needs to be renewed.",
+            "</p>",
+            "<p>",
+            "The registrar contract is expected to be upgraded in 2018 to include small renewal fees in order to discourage long term squatting and speculation.",
+            "</p>"
+        ],
+        "buttonUnderstand": "Understand the process"
     },
+    "explainerBid": {
+        "description": [
+            "<p>",
+                "Names in Ethereum are used to send ether, to access apps and for other future uses. Names are not \"bought\" from anyone. Ownership is guaranteed by willingness to lock ether for at least a year. While the ether is locked, the owner retains the rights to the domain, including the right to add extradata, create subdomains, lease, loan, sell it or do anything with another smart contract. The locking process takes five days, and the amount of ether locked gets determined by auction. If nobody tries to claim your name in the first week, then you'll be refunded all the funds other than the minimum amount of 0.01 ether.",
+            "</p>",
+            "<p>",
+                "After at minimum a year, the owner can release the name back to the market and thereby recover locked funds. When the permanent registrar is deployed, owners will have the right to move their names to the new registrar or get their ether back. The permanent registrar will probably make sitting on an inactive domain unprofitable by further locking of ether. The current registrar is temporary: it is expected that in 1 to 2 years a new update process will replace it with extra functions to discourage squatting. Names registered now are very likely to be grandfathered in the updated registrar, but you are expected to execute a transaction to move names. The current contract will not accept registrations in 4 years, and any ether remaining on it will become irretrievable after 8 years. Keep yourself informed and be ready to transfer your names in the coming years.",
+            "</p>",
+            "<strong>Max bidding</strong>",
+            "<p>",
+                "You bid for a name by submitting the maximum amount of ether you are willing to lock. If you are outbid, your ether will be refunded. If your bid wins, you will be refunded any amount your bid exceeds a second place bidder. Note: you only need to bid once. Your maximum bid is kept secret until you reveal it.",
+            "</p>"            
+        ]
+    },    
     "watch": {
         "buttonWatch": "watch",
         "buttonUnwatch": "unwatch"
@@ -51,17 +112,22 @@
         "watchedNames": "Watched Names",
         "moreOptions": "More Options",
         "exportBids": "Export Bids",
-        "importBids": "Import Bids"
+        "importBids": "Import Bids",
+        "sortByName": "Sort by name",
+        "sortByMode": "Sort by mode"
     },
     "open": {
         "nameIsAvailable": "<strong>%s</strong> is available",
-        "whatIsENS1": "Names in Ethereum are used to send ether, to access apps and other future uses. Names are not \"bought\" from anyone, ownership is guaranteed by willingness to lock ether for at least a year on the domain. While the ether is locked, the owner retains the rights to the domain, including the right to add extradata, create subdomains, lease, loan, sell it or do anything with another smart contract. The full process takes seven days and the amount of ether to be locked will be decided by auction. If nobody tries to claim your name in the first week, then you'll be refunded all the funds other than the minimum amount of <strong>0.01</strong> ether, required.",
-        "whatIsENS2": "After at minimum a year, the owner can release the name back to the market and therefore recover their funds. When the permanent registrar is deployed, owners will have the right to choose to move their names to the new registrar or get their ether back. The permanent registrar will most probably include rules that might require further locking of ether, in order to make sitting on an inactive domain unprofitable.",
         "understand": "I understand",
         "understandDescription": "how the process works and my risks and responsibilities involved",
         "buttonOpening": "Opening...",
+        "buttonOpenAuction": "Open Auction",
         "buttonOpenWithoutBidding": "Open without bidding",
-        "youOpenBids": "You open bids on an auction that isn't open. Either an error occurred opening the auction, or the auction ended without any bids. In either case, <strong>you must open the auction again to validate your bid</strong>."
+        "youHaveBidButTheAuctionIsNotOpen": [
+            "<h3>You have bid but the auction is not open</h3>",
+            "You open bids on an auction that isn't open. Either an error occurred opening the auction, or the auction ended without any bids. In either case, <strong>you must open the auction again to validate your bid</strong>."
+        ],
+        "or": "or.."
     },
     "auction": {
         "isWaitingForBids": "is waiting for bids",
@@ -81,6 +147,25 @@
         "willRefundedWhenYouReveal": "<strong>%s ether</strong> will refunded when you reveal your bid",
         "buttonReveal": "Reveal"
     },
+    "newBid": {
+        "howMuchDoYouValueThisName": "How much do you value this name?",
+        "sendTheMaximumAmount": "Send the maximum amount of value you would be willing to lock for this name:",
+        "protectBidAnonymity": [
+            "<h3>Protect bid anonymity</h3>",
+            "To keep the bid secret, we strongly recommend sending an extra amount"
+        ],
+        "maxFee": "Max Fee",
+        "cheaper": "cheaper",
+        "faster": "faster",
+        "hideOptions": "Hide options",
+        "showMoreOptions": "Show more options",
+        "understand": "I understand",
+        "understandDescription": "how the process works and my risks and responsibilities involved",
+        "buttonBid": "Bid",
+        "buttonLoadingDictionary": "Loading dictionary..",
+        "buttonBidding": "Bidding..",
+        "ether": "ether"
+    },
     "owned": {
         "youOwn": "You own <strong>%s</strong>",
         "nameIsOwned": "<strong>%s</strong> is owned",
@@ -88,7 +173,17 @@
         "deedValueIsMin": "No other bid was above the minimum of <em>0.01 ether</em>.",
         "secondHighestBid": "Second highest bid was <em>%s ether</em>.",
         "ownedBy": "Owned by:",
+        "assignedTo": "Currently assigned to:",
         "renewDate": "Needs to be renewed by: <strong>%s</strong>",
+        "ownerHasnotSetUpAnything": "Owner hasn't set up anything",
+        "claimedTheir": "or claimed their <strong>%s ether</strong> ether",
+        "yet": "yet",
+        "buttonSettingItUp": "Setting it up...",
+        "buttonSetUpYourName": "Set up your name",
+        "etherBack": "(and get %s  ether back)",
+        "onlyOwnerCanSetUp": "Only owner can set up",
+        "mainEthereumAddress": "Main Ethereum address:",
+        "contenHash": "Content hash for apps (IPFS/Swarm):",
         "records": "Records",
         "buttonApplying": "Applying...",
         "buttonCancel": "Cancel",
@@ -102,6 +197,7 @@
         "buttonSetResolver": "Set to default resolver",
         "transferOrRelease": "Transfer or Release",
         "transferOwnership": "Transfer ownership of %s to another account",
+        "attention": "<strong>ATTENTION: THIS IS IRREVERSIBLE</strong> once a name is transferred, only the new owner can transfer it back. Transferring a name also transfers the deposit to the new owner. Make sure you know what you're doing.",
         "accountToTransfer": "Account to transfer the name to:",
         "buttonTransferring": "Transferring...",
         "buttonTransfer": "Transfer",
@@ -141,5 +237,127 @@
         "initializingENS": "Initializing ENS registrar...",
         "connecting": "Connecting to Ethereum network...",
         "ready": "Ready!"
+    },
+    "explainer":  {  
+        "description": [
+        "<h1> Ethereum Name System (ENS)</h1>",
+
+        "<h2> What is it and what it isn't </h2>",
+        "<p>",
+            "The ENS is a system that was created to provide shorter, more human-friendly names in place of long addresses, such as ethereum addresses or Swarm hashes that are often used in the ethereum ecosystem.</p>",
+        "<p>",
+            "<strong>ENS is not a domain system:</strong> In the sense of internet domains, as managed by ICANN, ENS is not a domain system. While it can be used in a similar fashion on apps that replicate browser functionality, like Mist or Metamask, there is no claim on the \".eth\" top level domain system, which can only be managed by ICANN.",
+        "</p><p>",
+            "<strong>ENS does not grant a trademark or any sort of claim on ownership:</strong> registering an ENS name is a fully automated process and does not indicate ownership of any given trademark, copyright, brand name or any other kind of intellectual property.",
+
+       " </p><p>",
+            "<strong>This process is not a sale:</strong> ENS names are not sold or leased by any party or entity. While the process of claiming a name involves locking and/or burning funds, these processes were created to disincentive spamming and try to it make so that names are only claimed by users who will make use of them. All ether spent on the process is either given back to the bidder after some time, sent to a burn address or sent to a miner.",
+        "</p>",
+
+        "<h2> How the process works </h2>",
+        "<p>",
+            "<strong>The process of claiming a name takes five (5) days and requires multiple transactions that are time sensitive and often irreversible, so it will be important for you to fully understand the process  to ensure you do not irreversibly lose your ether. </strong>",
+        "</p> <p>", 
+            "Users start the process by opening a public auction for the name they want, which will send an alert that can be seen to anyone watching the blockchain for that specific name. After the auction is opened anyone who knows how to spell that name can bid on it in the next five days, by sending a transaction with the maximum amount they are willing to pay for the name. Bids are accepted until 72 hours after the initial auction opens. After that time, a 48 hour reveal phase starts <strong> during which, anyone who bids must reveal their bids (failing to do so will result in irreversible loss of funds)</strong>. The information required to reveal your bid is stored in your browser's local storage; we strongly recommend using the 'Export Bids' option to ensure you retain a copy of the necessary information.",
+        "</p> <p>",
+            "The bidder who was willing to pay the most for the name will be the registrant, but they will only pay an amount equal to the amount of the second highest bid. ",
+        "</p> <p>",
+            "Once the auction process is finished, the user needs to finalize their name to complete the auction, after which they will be able to transfer rights of use to someone else, add a subregistrar (eg. mysubdomain.mydomain.eth) or add record types associated with the name (ethereum address, bitcoin address, swarm content, etc). ",
+
+        "</p> <p>",
+            "After one year, the registrant can release the name back to the market and retrieve the ether they deposited to the contract, if they so wish. After two years, it is expected that an updated version of the registrar will be deployed, which might require some sort of recurring fee, deposit or some other way to encourage unused names to be released back in the market.",
+
+        "</p>",
+
+        "<h2> What names are valid? </h2>",
+
+        "<p>",
+            "As names are hashed during the auction process to increase privacy, any name, string or file could, in theory be owned via this process. At this time, names that are shorter than seven (7) characters are reserved until the system is more mature. If a user proceeds to registered, the name can be invalidated, which would result in irreversible loss of funds by the registrant. ",
+        "</p>",
+
+        "<h2>What names are discouraged?</h2>",
+
+        "<p>",
+            "Names that use any character outside of alphanumeric, hyphen and underscore, while valid, are not guaranteed to be resolved by the wallet or client software.",
+        "</p>",
+
+        "<h2> How much ether is needed </h2>",
+
+        "<p>",
+
+            "The minimum amount required for a bid is 0.01 ether. When bids are revealed, any extra ether that was sent to mask the bid value will be returned in full. The auction registrar will apply some fees that are proportional to the bid value, in order to discourage spamming. See the following fees below:",
+
+            "<ul>",
+                "<li>",
+                    "Non-winning bid: 0.5% is burned, 99.5% is returned.",
+                "</li>",
+                "<li>",
+                    "Once the auction is over, the winning bid is locked for at least one year: 100% remains in the contract until released.",
+                "</li>",
+                "<li>",
+                    "Bids that are not revealed during the 48-hour reveal period will be completely and irreversibly burned. The extra ether sent to the contract in addition to the bid amount, such as ether sent to mask the bid value, and an extra 0.5% of the bid value will be returned.",
+                "</li>",
+                "<li>",
+                    "Bids not revealed for more than 4 weeks are by definition invalid and can be cleared by anyone, even if the bid is still anonymous. In this case, the user doing the clearing will get 0.5% of the full deposit of the bid, and the remainder will be burned.",
+                "</li>",
+                "<li>",
+                    "Note that anyone can invalidate a name. If a name gets invalidated, 50% of the deposit will go to the user doing the invalidation, and the remaining amount will be returned to bidder.",
+                "</li>",
+            "</ul>",
+
+        "</p>",
+
+        "<h2> Responsibilities </h2>",
+        
+        "<p>",
+        "<ul>",
+            
+        "</ul>",
+            "<li> <strong>You are responsible for your own computer security and usage.</strong> Any consequence of the misuse of this code is your sole responsibility. No other party, nor any other entity can be held liable for any unintended consequence, loss of funds, illegal activity or any other issue that results from misuse of the code, use of the code for any purpose other than the intended purpose and any other \"bad\" usage of the code, including bugs in the current implementation. The full code can be inspected <a href=\"https://github.com/ethereum/ens\">on this code repository</a> but the deployment and usage of this piece of code is your own responsibility.</li>",
+
+            "<li> <strong>You are responsible for your own actions.</strong> If you mess something up or break any laws while using this software, it's your fault, and your fault only. </li>",
+
+            "<li> <strong> You are responsible for your own karma.</strong> Don't be a jerk and respect others.  </li>",
+        
+            "<p>",
+                "For the avoidance of  doubt, ENS is not responsible for any losses, damages or claims arising from, but not limited to:",
+            "</p>",
+
+            "<ol>",
+                "<li>",
+                    "Mistakes made by the user of the code e.g., payments sent to wrong address, bidding of the wrong name, failure to reveal bids within time limits.",
+                "</li>",
+                "<li>",
+                    "Software problems, e.g., incorrectly constructed transactions, defective code, temporary disruption of service, malware affecting the ENS registrar and/or any related software or service.",
+                "</li>",
+                "<li>",
+                    "Security problems experienced by the user, e.g., unauthorized bid reveals.",
+                "</li>",
+                "<li>",
+                    "Actions or inactions of third parties and/or events experienced by third parties, e.g., information security attacks, and fraud conducted by third parties.",
+                "</li>",
+            "</ol>",
+            
+
+            "<p><strong> Risk of Loss </strong></p>",
+
+            "<p>",
+                "Bidding in the auction can lead to loss of value as described above.  In addition, you can lose the right to a name if you do not take the correct steps to claim a winning bid or if there are intervening factors that impair you from claiming a winning a bid.",
+            "</p>",
+
+        "</p>",
+
+        "<h2>Disclaimer; Liabilities and Warranties </h2>",
+
+        "<p>",
+            "The user expressly knows and agrees that the user is using ENS at the user’s sole risk. The user represents that the user has an adequate understanding of the risks, usage and intricacies of cryptographic tokens,open source software, ethereum platform and ether. <br>",
+            
+            "THE USER EXPRESSLY AGREES THE NO PARTY (INCLUDING THE KEYHOLDERS OR ANY INDIVIDUAL OR ORGANIZATION THAT MAY HAVE CONTRIBUTED TO THE DEVELOPMENT OF THE ENS OR ETHEREUM) WILL BE LIABLE UNDER ANY CAUSE OF ACTION OR THEORY OF LIABILITY, EVEN IF SUCH PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES, AND THE USER SHALL HOLD ALL OTHER PARTIES HARMLESS, FOR ANY (A) INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR EXEMPLARY DAMAGES, (B) LOSS OF PROFITS, REVENUES, OPPORTUNITIES, OR GOODWILL, (C) UNAVAILABILITY OF ANY OR ALL OF THE ENS, (D) INVESTMENTS, EXPENDITURES OR COMMITMENTS BY USER RELATED TO USE OF OR ACCESS TO THE ENS, (E) COST OF PROCUREMENT OF SUBSTITUTE GOODS OR SUBSTITUTE SERVICES, (F) UNAUTHORIZED ACCESS TO USER CONTENT, OR ANY COMPROMISE, ALTERATION OR LOSS OF USER CONTENT, (G) COST OF REPLACEMENT OR RESTORATION OF ANY LOST OR ALTERED USER CONTENT, (H) ACTS OR OMISSIONS ATTRIBUTABLE TO ANY THIRD-PARTY, (I) LOST ETHER OR INABILITY TO SECURE DESIRED NAMES, (J) DEFECTIVE CODE OR (K) THE EXECUTION OF THE CODE. <br>",
+
+            "USER ACKNOWLEDGES AND AGREES THAT NO PARTY (INCLUDING THE KEYHOLDERS OR ANY INDIVIDUAL OR ORGANIZATION THAT MAY HAVE CONTRIBUTED TO THE DEVELOPMENT OF THE ENS OR ETHEREUM) IS ACTUALLY RESPONSIBLE FOR OPERATION OF THE ENS AND THAT LIKE ANY OTHER COMPUTER PROGRAM, THE ENS’ OPERATIONS ARE LIMITED TO HOW COMPUTATION LOGIC INTERPRETS THE OPENLY DISCLOSED SOURCE CODE AND THAT NO PARTY (INCLUDING THE KEYHOLDERS OR ANY INDIVIDUAL OR ORGANIZATION THAT MAY HAVE CONTRIBUTED TO THE DEVELOPMENT OF THE ENS OR ETHEREUM)  CAN GUARANTEE THAT THE ENS WILL WORK AS INTENDED (OR EVEN WORK IN A MANNER THAT IS CONSISTENT WITH THIS DOCUMENT). USER IS AWARE THAT SOLE RELIANCE ON A COMPUTER PROGRAM’S COMPUTATIONAL LOGIC CARRIES SIGNIFICANT RISK OF UNINTENDED RISKS OR RESULTS AND THAT IN THE EVENT OF AN ERROR, NO PARTY (INCLUDING THE KEYHOLDERS OR ANY INDIVIDUAL OR ORGANIZATION THAT MAY HAVE CONTRIBUTED TO THE DEVELOPMENT OF THE ENS OR ETHEREUM) IS OBLIGATED TO FIX OR REMEDIATE ANY PROBLEM. <br>",
+
+            "USER FURTHER ACKNOWLEDGES AND AGREES THAT THERE ARE NO OTHER REPRESENTATIONS OR WARRANTIES OF ANY KIND, WHETHER EXPRESS, IMPLIED, STATUTORY OR OTHERWISE, REGARDING THE ENS, AND USER HEREBY DISCLAIMS ALL OTHER WARRANTIES, INCLUDING ANY IMPLIED OR EXPRESS WARRANTIES: (A) OF MERCHANTABILITY, SATISFACTORY QUALITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, OR QUIET ENJOYMENT; (B) ARISING OUT OF ANY COURSE OF DEALING OR USAGE OF TRADE; (C) THAT THE ENS WILL BE UNINTERRUPTED, ERROR FREE, OR FREE OF HARMFUL COMPONENTS; (D) THAT THE ENS OR ANY CONTENT, INCLUDING USER CONTENT OR THIRD-PARTY CONTENT, WILL BE SECURE OR NOT OTHERWISE LOST OR DAMAGED; AND (D) THE ENS WILL HAVE ANY FUNCTIONALITY THAT IS NOT A NATURAL RESULT OF HOW THE SOURCE CODE SHOULD BE INTERPRETED.",
+        "</p>"
+        ] 
     }
 }

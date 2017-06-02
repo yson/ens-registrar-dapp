@@ -15,10 +15,10 @@
   {{else}}
     <div class="col-md-8 main-content">
 
-        <h1>{{_ "nameStatus.register"}}</h1>      
+        <h1>{{{_ "nameStatus.register"}}}</h1>      
 
         {{#if showStats}}
-        <h3> Stats on recent auctions </h3>
+        <h3> {{{_ "nameStatus.statsOnRecentAuctions"}}} </h3>
         <ul class="big-numerals">
             <li>
                 {{{_ "nameStatus.namesRegisteredForMinimumAmount" percentageDisputed }}}
@@ -30,7 +30,7 @@
         {{/if}}
 
         {{#unless isMainNetwork}}
-          <p><strong>You are NOT on the main Network, but on the {{TemplateVar.get 'network'}} network. Names bought here are not valid on the main net.</strong></p>
+          {{{_ "nameStatus.youAreNotOnTheMainNetwork" (TemplateVar.get 'network') }}}
         {{/unless}}
         
         {{> component_explainerBody}}
@@ -104,7 +104,7 @@
     <div>
         <h1>{{_ "nameStatus.nameIsTooShort"}}</h1>
         <p>
-            {{_ "nameStatus.namesAreTemporarilyLimited"}}
+            {{{_ "nameStatus.namesAreTemporarilyLimited"}}}
         </p>
     </div>
 </template>
@@ -113,7 +113,7 @@
     <div>
         <h1>{{_ "nameStatus.nameIsTooShort"}}</h1>
         <p>
-            {{_ "nameStatus.namesAreTemporarilyLimited"}}
+            {{{_ "nameStatus.namesAreTemporarilyLimited"}}}
         </p>
         <p>
             {{{_ "nameStatus.inValidateDescription"}}}
@@ -142,15 +142,9 @@
 
 <template name="status-not-yet-available">
     <div>
-        <h1><strong>{{name}}</strong> is not yet available</h1>
-        <p>
-          Names are being released on a distributed schedule. Registration for this name can be requested by anyone after <strong>{{availableDate}}</strong>. 
-        </p>
-        <p>
-          Once a name is requested, a period of 72 hours begins in which anyone can put a sealed bid for it and send the necessary funds (minimum of 0.01 ether). This period is followed by a 48 hour one (the "Reveal Period") in which <strong>bids must be revealed. Any bid that is not revealed during Reveal Period results in the loss of its related funds</strong>. Revealing your bid requires information stored in your browser, or backed up using the 'Export Bids' option. The highest bidder after all bids are revealed during this Reveal Period becomes the registrant of the name, and the ether they sent to the contract will be refunded immediately, <strong>minus the value required to outbid the second highest bidder.</strong> The remaining funds are kept locked in a contract for at least a year, after which they can be withdrawn by the registrant upon releasing rights of use of the name. Names with registrants are controlled only by their registrants, who can transfer or release the name until it needs to be renewed.
-        </p>
+        {{{_ "nameStatus.nameIsNotYetAvailable" name availableDate}}}
 
-        <button type="submit" class="dapp-block-button" disabled="true"> Cannot open now </button>
+        <button type="submit" class="dapp-block-button" disabled="true"> {{{_ "nameStatus.buttonCannotOpenNow"}}} </button>
 
     </div>
 </template>
@@ -158,7 +152,7 @@
 <template name="aside-not-yet-available">
     {{>components_watch name=name}}
 
-   <h3>Can be requested in</h3>
+   <h3>{{{_ "nameStatus.canBeRequestedIn"}}}</h3>
 
     <h1> {{availableCountdown}} </h1>
 </template>
@@ -176,7 +170,7 @@
           {{> components_bid bid=bid status='reveal' }}
           {{/each}}
         {{else}}
-          <p> You don't have any bids for this name. If you have previously bid, then <a href="" class="import-bids">Import your bids backup</a> to see and reveal them. </p>
+          <p>{{{_ "nameStatus.ifYouHavePreviouslyBid"}}} </p>
         {{/if}}
         
         {{#unless hasNode}}
