@@ -132,10 +132,10 @@
 
     <ul>
         <li>
-            <span class="big-numeral">{{value}}</span> <span class="unit">ether</span> {{_ "nameStatus.lockedInThisName"}}
+            <span class="big-numeral">{{value}}</span> <span class="unit">{{_ "nameStatus.ether"}}</span> {{_ "nameStatus.lockedInThisName"}}
         </li>
         <li>
-            <span class="big-numeral">{{invalidatorFee}}</span> <span class="unit">ether</span> {{_ "nameStatus.invalidatorFee"}}
+            <span class="big-numeral">{{invalidatorFee}}</span> <span class="unit">{{_ "nameStatus.ether"}}</span> {{_ "nameStatus.invalidatorFee"}}
         </li>
     </ul>
 </template>
@@ -187,10 +187,10 @@
     <p> {{registrationDate}} </p>
     <br>
     <h3>{{_ "nameStatus.currentHighestBidder"}}</h3>
-    <span class="big-numeral">{{highestBid}}</span> <span class="unit">ether</span>
+    <span class="big-numeral">{{highestBid}}</span> <span class="unit">{{_ "nameStatus.ether"}}</span>
     <br>
-    <h3>Current second-highest bidder</h3>
-    <span class="big-numeral">{{secondHighestBid}}</span> <span class="unit">ether</span>
+    <h3>{{_ "nameStatus.currentSecondHighestBidder"}}</h3>
+    <span class="big-numeral">{{secondHighestBid}}</span> <span class="unit">{{_ "nameStatus.ether"}}</span>
 
 </template>
 

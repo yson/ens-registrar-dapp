@@ -50,13 +50,15 @@
         "yourBids": "당신의 입찰가",
         "timeRemaining": "경매 종료까지 남은 시간",
         "currentHighestBidder": "현재 최고 입찰자",
+        "currentSecondHighestBidder": "현재 두 번째 최고 입찰자",        
         "nameIsOwned": "<strong>%s</strong>가(이) 소유",
         "theNameWasRegistered": "이 네임은 <em>%s</em>에게 등록되었습니다. 소유자가 최고 <em>%s 이더</em> 까지 지불하겠다고 입찰했습니다.",
         "ownedBy": "소유자 :",
         "needsToBeRenewedBy": "다음 시점까지 갱신 필요",
         "finalizedByTheOwner": "네임 관련 변경 전 %s 이더를 소유자에게 환불하여야 해당 네임이 양도됩니다.",
         "buttonFinalizing": "완료 중...",
-        "buttonFinalizeIt": "완료"
+        "buttonFinalizeIt": "완료",
+        "ether": "이더"
     },
     "explainerBody": {
         "description": [
@@ -169,7 +171,7 @@
     "owned": {
         "youOwn": "<strong>%s</strong> 소유",
         "nameIsOwned": "<strong>%s</strong>을 소유함",
-        "description1": "이 네임은 <em>%s</em>이(가) 등록하였습니다. 소유자의 최고 입찰가는 <em>%s 이더</em>였습니다.",
+        "description1": "이 네임은 <em>%s</em>에 등록하였습니다. 소유자의 최고 입찰가는 <em>%s 이더</em>였습니다.",
         "deedValueIsMin": "최소 <em>0.01 이더</em> 이상의 다른 입찰자가 없습니다.",
         "secondHighestBid": "두번째 높은 입찰가는 <em>%s 이더</em> 입니다.",
         "ownedBy": "소유자:",

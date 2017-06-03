@@ -50,13 +50,15 @@
         "yourBids": "Your bids",
         "timeRemaining": "Time remaining until auction ends",
         "currentHighestBidder": "Current highest bidder",
+        "currentSecondHighestBidder": "Current second-highest bidder",
         "nameIsOwned": "<strong>%s</strong> is owned",
         "theNameWasRegistered": "This name was registered at <em>%s</em>. Owner offered to pay up to <em>%s ether</em>. ",
         "ownedBy": "Owned by:",
         "needsToBeRenewedBy": "Needs to be renewed by:",
         "finalizedByTheOwner": "Before any changes can be done to the name, this name needs to be finalized by the owner which will send them a refund %s ether to the owner.",
         "buttonFinalizing": "Finalizing...",
-        "buttonFinalizeIt": "Finalize it"
+        "buttonFinalizeIt": "Finalize it",
+        "ether": "ether"
     },
     "explainerBody": {
         "description": [
